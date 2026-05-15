@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__kinematics-wiki__write_record",
+      "mcp__kinematics-wiki__read_record",
+      "mcp__kinematics-wiki__list_records",
+      "mcp__kinematics-wiki__get_wiki_info"
+    ]
+  }
+}
