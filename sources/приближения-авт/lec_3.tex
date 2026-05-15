@@ -1,0 +1,317 @@
+\documentclass[10pt, xetex]{article}
+\linespread{0.94}
+\usepackage[includeheadfoot,
+            %showframe,% показывает поля --- нужно для отладки
+            paperwidth=145mm, %ширина листа
+            paperheight=210mm, %высота
+            top=0.6cm, %верхние поля
+            bottom=0.8 cm, %нижние          
+            outer=10mm, %внешние
+            inner=10mm, %внутренние
+            marginparwidth=0.6cm, %ширина текста на полях
+            marginparsep=1.2mm, %расстояние от тела текста до текста на полях 
+            headheight=.5cm,
+            footskip=0.6cm, %расстояние от нижней границы нижних полей до текста
+            columnsep=.9cm,
+            headsep=0.2cm, %расстояние от верхнего колонтитула до текста
+            heightrounded
+            ]{geometry}        
+\setlength\parindent{8pt}
+\usepackage[]{fontspec}
+\usepackage[english, russian]{babel}
+\setromanfont{STIXTwoText}
+\setsansfont{STIXTwoText}
+\setmonofont{Anonymous Pro}
+\defaultfontfeatures{Ligatures={TeX}} 
+\setmainfont[]{STIXTwoText}
+
+\usepackage[math-style=TeX]{unicode-math}
+\unimathsetup{math-style=TeX}
+\setmathfont{texgyrepagella-math.otf}
+
+\usepackage[framemethod=pstricks]{mdframed}
+\usepackage{xkeyval}
+\usepackage{ifthen}
+\usepackage{ifpdf}
+\usepackage{etoolbox}
+\usepackage{multicol}
+
+\usepackage{xcolor}
+
+\usepackage{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-circ}
+\usepackage{pst-grad}
+\usepackage{pst-plot}
+\usepackage{pst-coil}
+\usepackage{pst-slpe,pstricks-add,pst-blur, pst-func}
+\newpsstyle{Blackball}{fillstyle=ccslope,slopebegin=white,slopeend=black,
+    slopecenter={0.6 0.6}, linewidth=0.25pt, linecolor=black}
+
+
+\usepackage[pstricks]{bclogo} \setlength{\logowidth}{10pt}
+\renewcommand\bcStyleTitre[1]{\hskip1.6mm\emph{#1}}
+
+
+
+
+\usepackage{titlesec}
+\titlelabel{\thetitle.~}
+\titleformat{name=\part}[hang]{\Huge}{}{}{\filcenter}{\filcenter}
+\titlespacing*{\part}{0pt}{2pt plus 2pt minus 1pt}{10pt}%  
+\titleformat{name=\section}[hang]{\Large}{}{2pt}{\filcenter\thesection.~}{\filcenter}
+\titlespacing*{\section}{0pt}{8pt plus 2pt minus 1pt}{2pt}%   
+\titleformat{name=\section,numberless}[hang]% уменьшение расстояния до section
+   {\Large}%
+   {}%
+   {0em}%
+   {\filcenter}%
+\titlespacing{\section}{0pt}{8pt plus 2pt minus 1pt}{2pt}% 
+\titleformat{name=\subsection,numberless}% уменьшение расстояния до subsection
+   {\large}%
+   {}
+   {0em}%
+   {\filcenter}%
+\titlespacing*{\subsection}{0pc}{4pt plus 1pt minus 0.5pt}{0pt plus 0.5pt minus 0.5pt}%
+ 
+%\usepackage{showframe}
+
+\usepackage{graphicx}
+\usepackage{fancybox,fancyhdr}
+%\usepackage{eucal,bm, amsthm, amssymb, amsmath, array}
+\usepackage[scale=1.18,boondox]{emf} 
+
+\usepackage[hypcap=false]{caption}
+\captionsetup[figure]{font={small,sl}, name={К примеру}}
+\setlength{\abovecaptionskip}{3pt plus 1pt minus 1pt}
+\captionsetup[table]{font={small,sl}, name={Таблица}}
+\setlength{\abovecaptionskip}{3pt plus 1pt minus 1pt}
+
+\usepackage{float}
+\definecolor{darkred}{HTML}{8B0000}
+\definecolor{linkcolor}{HTML}{120A8F}
+%\definecolor{arrow_red}{HTML}{FF0000}
+
+\setlength{\textfloatsep}{2pt plus 1.0pt minus 2.0pt} %расстояние от float до текста;
+\setlength{\floatsep}{2pt}%расстояние между двумя floats;
+\setlength{\intextsep}{4pt}%расстояние между floats с [h] и текстом ;
+
+\newcounter{zadacha}
+\newcommand{\z}{\par\vspace{0.6\baselineskip plus 1pt minus 1pt}\noindent\addtocounter{zadacha}{1}\hypertarget{z\thezadacha}{}\hyperlink{an\thezadacha}{{Пример {\arabic{zadacha}.}\:\hskip0.15mm}}}
+\newcounter{answer}
+\newcommand{\an}{\par\vspace{0.25\baselineskip plus 1pt minus 1pt}\noindent\addtocounter{answer}{1}%
+\hypertarget{an\theanswer}{}\hyperlink{z\theanswer}{\:\textbf{\arabic{answer}.}\:\hskip0.15mm}}
+
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\usepackage[]{hyperref}
+%\definecolor{linkcolor}{HTML}{1560BD} % цвет ссылок
+\definecolor{violet}{HTML}{800080} % цвет гиперссылок
+%\definecolor{arrow_blue}{HTML}{000080}%{000080}%{ADD8E6}}
+\hypersetup{linkcolor=linkcolor,citecolor=darkred, urlcolor = violet, colorlinks=true}
+\hypersetup{pdfhighlight=/P}
+\usepackage[all]{hypcap}
+
+
+\bibliographystyle{ugost2008l}
+
+
+\begin{document}
+
+
+
+\pagestyle{fancy}
+\rhead{\small{Лето 2020}}
+%\setlength{\headheight}{1cm}
+\lhead{\uppercase{\small\textsl{Олимпиадный марафон СУНЦ, 8 кл.}}}
+\cfoot{ --~\thepage~-- }
+%\rfoot{\fontspec{Pecita}{Пётр А. Крюков}}
+%\rfoot{\texttt{\textit{\small{Пётр А. Крюков}}}}
+\renewcommand{\headrulewidth}{0.75pt} %линия в верхнем колонтитуле
+\renewcommand{\footrulewidth}{0.0pt} %линия в нижнем колонтитуле
+\setlength{\textfloatsep}{10pt plus 1.0pt minus 2.0pt}
+\setlength{\floatsep}{6pt plus 1.0pt minus 1.0pt}
+\setlength{\intextsep}{6pt plus 1.0pt minus 1.0pt}
+\part*{Приближённые вычисления II}
+\vskip-\baselineskip
+\z Разложите функцию $f(x) = \displaystyle{\frac{1}{1-x}}$ в степенной ряд ($|x|<<1$), разделив в столбик $1$ на $1-x$. Попробуйте получить формулу для $n$-ого члена ряда. 
+
+\z Для функции $f(x) = (1+x)^{n}$, где $n$ --- натуральное число, получите линейное и квадратичное приближения при малых $x$.
+\vskip0.25\baselineskip
+Линейное приближение получить легко:
+\setlength{\belowdisplayskip}{0.25\baselineskip} 
+\setlength{\abovedisplayskip}{0.25\baselineskip}
+\[
+(1+x)^{n} = (1+x)(1+x)\cdots(1+x)\approx 1+nx;
+\]
+Попробуйте подсчитать сколько получается слагаемых, содержащих $x^{2}$, при перемножении всех скобок. Должно получиться: $\displaystyle{\frac{n(n-1)}{2}}$. Таким образом квадратичное приближение даётся формулой:
+\[
+(1+x)^{n} \approx 1+nx+\frac{n(n-1)}{2}x^{2}.
+\]
+Следует осторожно пользоваться линейным приближением для $(1+x)^{n}$ при больших значениях показателя степени $n$.
+
+\z Докажите, что в линейном приближении справедлива формула
+\[
+\sqrt[3]{1+x} \approx 1+\frac{x}{3}.
+\]
+Какой может быть аналогичная формула для функции $\sqrt[5]{1+x}$.
+
+
+\z Получите формулу линейного приближения ($|x|<<1$) для следующих выражений:
+\[
+\text{a)}\:\frac{1+x}{(1-x)(1-2x)}; \qquad\qquad \text{б)}\:\frac{1}{\sqrt{(1-x)^{3}}}  -\frac{1}{\sqrt{(1+x)^{3}}} ;\qquad\qquad \text{в)}\:\frac{\tg x+\sin^{2}x}{x}.
+\]
+\setcounter{figure}{\thezadacha}
+\z В треугольнике на рисунке $OA = OB = R$, угол $\alpha$ --- малый. Найдите в линейном и квадратичном приближении: $OP$, $AP$, $BP$.
+
+\begin{figure}[h]
+\centering
+{
+\includegraphics[]{circle_approx.eps}
+}
+\caption{}
+       \label{circle_approx} 
+\end{figure}
+
+В прямоугольном треугольнике $OBP$: $BP = R\sin \alpha$, $OP = R \cos \alpha$.  В линейном приближении: $BP \approx \alpha R$, $OP \approx R$, $AP = R - OP \approx 0$. Другими словами, в линейном приближении точки $P$ и $A$ совпадают! \\
+\indent В квадратичном приближении, напомним: $\sin \alpha \approx \alpha$, $\cos \alpha \approx \displaystyle{1-\frac{\alpha^{2}}{2}}$. Поэтому: $BP \approx \alpha R$, $OP \approx \displaystyle{R-R\frac{\alpha^{2}}{2}}$, $AP = \displaystyle{R\frac{\alpha^{2}}{2}}$. 
+
+
+\z Найдите в линейном по $x$ ($|x|\ll 1$) приближении $\displaystyle{\sin\left(\frac{\pi}{4}+x\right)}$.
+\vskip0.25\baselineskip
+Решение иллюстрирует рисунок. Рассмотрим прямоугольные треугольники $ABC$ и $AB_{1}C_{1}$ c гипотенузой 1:  $AC = AC_{1} = 1$.  Тогда синусы углов равны длинам соответствующих катетов:
+\[
+\sin \frac{\pi}{4} = \frac{1}{\sqrt{2}}  = BC, \qquad \qquad \sin\left(\frac{\pi}{4}+x \right)=B_{1}C_{1}.
+\]
+
+\begin{figure}[h]
+\centering
+{
+\includegraphics[]{sin_sum.eps}
+}
+\caption{}
+\end{figure}
+
+\noindent $B_{1}C_{1} = BC+DC_{1} = \displaystyle{\frac{1}{\sqrt{2}}+DC_{1}}$, $DC_{1} = CC_{1}\sin(\angle C_{1}CD)$. Для оценки $CC_{1}$ рассмотрим равнобедренный треугольник $CAC_{1}$. Опустив высоту на основание $CC_{1}$, легко получим: $CC_{1} = \displaystyle{2AC\sin\frac{x}{2} \approx x}$. Теперь для того, чтобы найти $DC_{1}$ в линейном приближении, достаточно оценить $\angle C_{1}CD$ в нулевом приближении: $\angle C_{1}CD \approx \displaystyle{\frac{\pi}{4}}$! Поэтому: $DC_{1} \approx \displaystyle{\frac{1}{\sqrt{2}}\cdot x}$. Таким образом, ответ:  
+\[
+\sin\left(\frac{\pi}{4}+x \right)=\frac{1}{\sqrt{2}}+DC_{1}= \frac{1}{\sqrt{2}}(1+x).
+\]
+
+\z Покажите, что формулу предыдущего примера можно обобщить и получить для произвольного острого угла $\varphi$ и малого $x$:
+\[
+\sin\left(\varphi+x \right)= \sin\varphi+x\cdot \cos\varphi, \qquad \cos\left(\varphi+x \right)= \cos\varphi-x\cdot \sin\varphi,
+\]
+
+
+\setcounter{figure}{\thezadacha}
+\z Человек с идеальным зрением стоит на берегу моря вблизи экватора и смотрит на водную гладь. На каком расстоянии он видит линию горизонта? Считайте, что Земля представляет собой шар радиусом $6\:400~\hbox{км}$. Рост человека равен $1{,}75~\hbox{м}$. День ясный, на море штиль.
+\vskip0.25\baselineskip
+Решение следует из рисунка. Обозначения: $x \approx 1{,}65~\hbox{м}$ --- высота, на которой располагаются глаза человека, относительно уровня моря; $R$ --- радиус Земли. 
+
+\begin{figure}[h]
+\centering
+{
+\includegraphics[]{sunrise.eps}
+}
+\caption{}
+\end{figure}
+
+\noindent Искомое расстояние $L$ равно катету $AB$ ($AB$ --- касательная) прямоугольного треугольника $ABC$.  Легко видеть, что:
+\[
+L = \sqrt{(R+x)^{2}-R^{2}} \approx \sqrt{2Rx} \approx 4{,}6~\hbox{км}.
+\]
+
+
+
+\z (\textit{Меледин}) Пассажир летящего на высоте $10~\hbox{км}$ самолёта видит восходящее солнце. Оцените через какое время увидит солнце наблюдатель, стоящий на земле под самолётом. Рефракцию солнечных лучей в атмосфере не учитывайте. 
+\vskip0.25\baselineskip
+Если дело происходит на экваторе, то искомое время равно $t \approx 13~\hbox{мин}$. При решении можно использовать рисунок к предыдущей задаче. Если учесть  географическую широту (например, вашего города), ответ изменится.
+
+\setcounter{figure}{\thezadacha}
+\z Углы $\alpha$ и $\beta$ (см. рисунок) известны и малы, $BK \parallel CL$, $DE = d$. Определите $BC$.
+
+\begin{figure}[h]
+\centering
+{
+\includegraphics[]{two_triangle.eps}
+}
+\caption{}
+\end{figure}
+Решается <<в два счёта>>, если сделать небольшое дополнительное построение и учесть малость углов. Ответ: $\displaystyle{d\left(1 - \frac{\alpha}{\beta} \right)}$.
+\z (\textit{МосГор, 8, 2020, изм.}) Аквариум в виде куба с длиной стороны $a =$ $=40~\hbox{см}$ заполнен водой доверху. Аквариум начинают очень медленно поворачивать вокруг одного из рёбер, так что угол $\varphi$ между дном аквариума и горизонтальной поверхностью увеличивается на $1^{\circ}$ каждые $10$ секунд, при этом вода из аквариума вытекает. Скорость истечения воды количественно характеризует расход $Q = \displaystyle{\frac{\Delta m}{\Delta t}}$, равный массе воды, вытекающей из аквариума за малое время $\Delta t$. Расход $Q$ меняется в зависимости от угла $\varphi$. Найдите угол $\varphi$ в момент, когда расход воды $Q$ достигает максимального значения $Q_{\textup{max}}$.  Чему равно максимальное значение расхода $Q_{\textup{max}}$? Плотность воды равна $\rho = 1000~\hbox{кг}/\hbox{м}^{3}$.  
+
+
+\begin{figure}[h]
+\centering
+{
+\includegraphics[]{water_bulk.eps}
+}
+\caption{}
+\end{figure}
+
+За маленькое время $\Delta t$ из аквариума вытекает вода, занимавшая объём $\Delta V$ маленькой треугольной призмы (см. рисунок), похожей на клин, дающей в сечении треугольник $ABC$. Объём этого клина равен $\Delta V = a \cdot S_{ABC}$. Поскольку угол $\angle BCA$ --- малый,  $BC \approx AC \approx DC$. Площадь треугольника $ABC$ приближённо равна $S_{ABC} \approx S_{DBC} \approx \displaystyle{\frac{BC \cdot BD}{2} = \frac{a\Delta h}{2\cos\varphi}}$, где $\Delta h = BD = \displaystyle{\frac{a}{\cos\varphi}\cdot\frac{\pi}{180}\cdot \frac{\Delta t}{t_{0}}}$ ($t_{0} = 10~\hbox{с}$). Таким образом, для расхода верна формула
+\[
+Q = \frac{\pi a^{3}\rho}{360t_{0}\cos^{2}\varphi}, 
+\]
+из которой следуют ответы на оба вопроса. Максимальное значение расхода достигается при $\varphi = \displaystyle{\frac{\pi}{4}}$ и оказывается равно $Q_{\textup{max}}\approx 112~\hbox{г}/\hbox{с}$.
+
+
+\vskip-0.5\baselineskip
+\begin{bclogo}[logo=\bccrayon, margeG=-0.4, margeD=0, noborder = true, couleurBarre = darkred]{~Касательная к графику и линейное приближение }%
+Если к графику функции $f(x)$ в точке $x_{0}$ можно провести касательную, то уравнение касательной: $y(x) = f(x_{0})+k(x-x_{0})$ задаёт линейное по малому параметру $(x-x_{0})$ приближение: $f(x) \approx f(x_{0})+k(x-x_{0})$.
+\end{bclogo}
+\vskip-0.5\baselineskip
+Рассмотрим функцию $f(x) = x^{2}$. Мы хотим получить уравнение касательной к графику в точке $x_{0}$. При $|x - x_{0}|\ll 1$ в линейном приближении:
+\[
+x^{2}\approx k(x-x_{0})+x_{0}^{2}, 
+\]
+где $k$ --- угловой коэффициент касательной, который легко находится:
+\[
+k \approx  x+x_{0} \approx 2x_{0}.
+\]
+Таким образом, уравнение касательной даётся формулой 
+\[
+y(x) = 2x_{0}(x-x_{0})+x_{0}^{2}.
+\]
+На рисунке ниже вы видите график параболы $f(x) = x^{2}$ и касательную. Геометрический смысл линейного приближения вблизи точки $x_{0}$ состоит в том, что график функции почти совпадает с касательной в некоторой небольшой области около точки $x_{0}$.
+\vskip0.5\baselineskip
+\noindent
+\begin{minipage}[t][45.82mm][t]{\linewidth}
+\noindent
+\centering
+   {\includegraphics[]{sqr.eps}}
+\end{minipage}
+\vskip0.25\baselineskip
+Коэффициент $k = 2x_{0}$ наклона касательной характеризует скорость роста функции $f(x) = x^{2}$ в точке $x_{0}$. В точке локального максимума или минимума любой <<хорошей>> функции $k=0$.
+
+\z Получите выражение для коэффициента $k$ наклона касательной, проведённой к графику функции $f(x)$ в точке $x_{0}$, если: 
+\[
+\text{a)}~f(x)= ax^{2}+bx+c; \qquad\qquad\qquad \text{б)}~f(x)=\frac{1}{x} ;\qquad\qquad\qquad \text{в)}~f(x) = \sin x.
+\]
+
+Сделаем п.\:в). Из определения, приведённого выше, следует, что: 
+\[
+k = \frac{f(x)-f(x_{0})}{x-x_{0}},
+\]
+ при этом $|x-x_{0}| \ll 1$, или даже так: $|x-x_{0}| \approx 0$. Однако, нельзя сказать, что $x-x_{0} = 0$, формула потеряет смысл, и ничего не получится. В таких случаях говорят <<$x$ стремится к $x_{0}$>>. Другими словами, $\Delta x = (x-x_{0})$ --- очень маленькая величина, но всё же не строго ноль. Для $f(x) = \sin x$ имеем:
+\[
+k = \frac{\sin(x)-\sin(x_{0})}{x-x_{0}} = \frac{\sin(x_{0}+\Delta x)-\sin(x_{0})}{\Delta x}.
+\] 
+Далее применяем приближённую формулу $\sin\left(\varphi+x \right)= \sin\varphi+x\cdot \cos\varphi$ из примера 7 и получаем ответ: 
+\[
+k = \frac{\sin(x_{0})+\Delta x\cdot\cos x_{0}-\sin(x_{0})}{\Delta x} = \cos x_{0}
+\]
+В п.\:а) и п.\:б) получится соответственно: $k= 2ax_{0}+b$ и $k = \displaystyle{-\frac{1}{x_{0}^{2}}}$.
+\z Покажите, что из предыдущего примера следует, что для линейной зависимости скорости от времени: $v(t) = at + v_{0}$, зависимость пройденного расстояния от времени будет квадратичной: $S(t) = At^{2}+Bt$. Определите коэффициенты $A$ и $B$, если $a$ и $v_{0}$ --- известны.
+
+\z Гипербола $f(x) = \displaystyle{\frac{A}{x}}$ касается прямой $y(x) = \displaystyle{-\frac{1}{4}x+1}$. Найдите $A$.
+\vskip0.25\baselineskip
+Можно показать, что угловой коэффициент наклона касательной к гиперболе $f(x) = \displaystyle{\frac{A}{x}}$ определяется по формуле $k = \displaystyle{-\frac{A}{x_{0}^{2}}}$, где $x_{0}$ --- абсцисса точки касания. Отсюда следует соотношение $x_{0}^{2} = 4A$. Поскольку прямая касается гиперболы в точке $x_{0}$, справедливо равенство $y(x_{0}) = f(x_{0})$, из которого следует уравнение
+\[
+\frac{A}{x_{0}} = -\frac{1}{4}x_{0}+1.
+\]
+Подставляем в это уравнение значение $x_{0}$, выраженное через $A$, преобразовываем и получаем ответ: $A = 1$.
+
+\z Для некоторого нагревательного прибора построили график зависимости $Q(t)$ --- количества теплоты, выделяющегося на нагревателе, от времени. Какой физический смысл имеет коэффициент $k$ наклона касательной к графику функции $Q_{t}$?  
+
+\end{document}

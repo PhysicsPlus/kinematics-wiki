@@ -1,0 +1,478 @@
+\documentclass[10pt, xetex]{article}
+\linespread{0.94}
+\usepackage[includeheadfoot,
+            %showframe,% показывает поля --- нужно для отладки
+            paperwidth=145mm, %ширина листа
+            paperheight=210mm, %высота
+            top=0.6cm, %верхние поля
+            bottom=0.8 cm, %нижние          
+            outer=10mm, %внешние
+            inner=10mm, %внутренние
+            marginparwidth=0.6cm, %ширина текста на полях
+            marginparsep=1.2mm, %расстояние от тела текста до текста на полях 
+            headheight=.5cm,
+            footskip=0.6cm, %расстояние от нижней границы нижних полей до текста
+            columnsep=.9cm,
+            headsep=0.2cm, %расстояние от верхнего колонтитула до текста
+            heightrounded
+            ]{geometry}        
+\setlength\parindent{8pt}
+\usepackage[]{fontspec}
+\usepackage[english, russian]{babel}
+\setromanfont{STIXTwoText}
+\setsansfont{STIXTwoText}
+\setmonofont{Anonymous Pro}
+\defaultfontfeatures{Ligatures={TeX}} 
+\setmainfont[]{STIXTwoText}
+
+\usepackage[math-style=TeX]{unicode-math}
+\unimathsetup{math-style=TeX}
+\setmathfont{texgyrepagella-math.otf}
+
+\usepackage[framemethod=pstricks]{mdframed}
+\usepackage{xkeyval}
+\usepackage{ifthen}
+\usepackage{ifpdf}
+\usepackage{etoolbox}
+\usepackage{multicol}
+
+\usepackage{xcolor}
+
+\usepackage{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-circ}
+\usepackage{pst-grad}
+\usepackage{pst-plot}
+\usepackage{pst-coil}
+\usepackage{pst-slpe,pstricks-add,pst-blur, pst-func}
+\newpsstyle{Blackball}{fillstyle=ccslope,slopebegin=white,slopeend=black,
+    slopecenter={0.6 0.6}, linewidth=0.25pt, linecolor=black}
+
+
+\usepackage[pstricks]{bclogo} \setlength{\logowidth}{10pt}
+\renewcommand\bcStyleTitre[1]{\hskip1.6mm\emph{#1}}
+
+
+
+
+\usepackage{titlesec}
+\titlelabel{\thetitle.~}
+\titleformat{name=\part}[hang]{\Huge}{}{}{\filcenter}{\filcenter}
+\titlespacing*{\part}{0pt}{2pt plus 2pt minus 1pt}{10pt}%  
+\titleformat{name=\section}[hang]{\Large}{}{2pt}{\filcenter\thesection.~}{\filcenter}
+\titlespacing*{\section}{0pt}{8pt plus 2pt minus 1pt}{2pt}%   
+\titleformat{name=\section,numberless}[hang]% уменьшение расстояния до section
+   {\Large}%
+   {}%
+   {0em}%
+   {\filcenter}%
+\titlespacing{\section}{0pt}{8pt plus 2pt minus 1pt}{2pt}% 
+\titleformat{name=\subsection,numberless}% уменьшение расстояния до subsection
+   {\large}%
+   {}
+   {0em}%
+   {\filcenter}%
+\titlespacing*{\subsection}{0pc}{4pt plus 1pt minus 0.5pt}{0pt plus 0.5pt minus 0.5pt}%
+ 
+%\usepackage{showframe}
+
+\usepackage{graphicx}
+\usepackage{fancybox,fancyhdr}
+%\usepackage{eucal,bm, amsthm, amssymb, amsmath, array}
+\usepackage[scale=1.18,boondox]{emf} 
+
+\usepackage[hypcap=false]{caption}
+\captionsetup[figure]{font={small,sl}, name={К примеру}}
+\setlength{\abovecaptionskip}{3pt plus 1pt minus 1pt}
+\captionsetup[table]{font={small,sl}, name={Таблица}}
+\setlength{\abovecaptionskip}{3pt plus 1pt minus 1pt}
+
+\usepackage{float}
+\definecolor{darkred}{HTML}{8B0000}
+\definecolor{linkcolor}{HTML}{120A8F}
+%\definecolor{arrow_red}{HTML}{FF0000}
+
+\setlength{\abovecaptionskip}{0.2cm}% от подписи до float 
+\setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt} %расстояние от float до текста;
+\setlength{\floatsep}{2pt}%расстояние между двумя floats;
+\setlength{\intextsep}{4pt}%расстояние между floats с [h] и текстом ;
+
+\newcounter{zadacha}
+\newcommand{\z}{\par\vspace{0.6\baselineskip plus 1pt minus 1pt}\noindent\addtocounter{zadacha}{1}\hypertarget{z\thezadacha}{}\hyperlink{an\thezadacha}{{Пример {\arabic{zadacha}.}\:\hskip0.15mm}}}
+\newcounter{answer}
+\newcommand{\an}{\par\vspace{0.25\baselineskip plus 1pt minus 1pt}\noindent\addtocounter{answer}{1}%
+\hypertarget{an\theanswer}{}\hyperlink{z\theanswer}{\:\textbf{\arabic{answer}.}\:\hskip0.15mm}}
+
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\usepackage[]{hyperref}
+%\definecolor{linkcolor}{HTML}{1560BD} % цвет ссылок
+\definecolor{violet}{HTML}{800080} % цвет гиперссылок
+%\definecolor{arrow_blue}{HTML}{000080}%{000080}%{ADD8E6}}
+\hypersetup{linkcolor=linkcolor,citecolor=darkred, urlcolor = violet, colorlinks=true}
+\hypersetup{pdfhighlight=/P}
+\usepackage[all]{hypcap}
+
+
+\bibliographystyle{ugost2008l}
+
+
+\begin{document}
+
+
+
+\pagestyle{fancy}
+\rhead{\small{Лето 2020}}
+%\setlength{\headheight}{1cm}
+\lhead{\uppercase{\small\textsl{Олимпиадный марафон СУНЦ, 8 кл.}}}
+\cfoot{ --~\thepage~-- }
+%\rfoot{\fontspec{Pecita}{Пётр А. Крюков}}
+%\rfoot{\texttt{\textit{\small{Пётр А. Крюков}}}}
+\renewcommand{\headrulewidth}{0.75pt} %линия в верхнем колонтитуле
+\renewcommand{\footrulewidth}{0.0pt} %линия в нижнем колонтитуле
+\setlength{\textfloatsep}{10pt plus 1.0pt minus 2.0pt}
+\setlength{\floatsep}{6pt plus 1.0pt minus 1.0pt}
+\setlength{\intextsep}{6pt plus 1.0pt minus 1.0pt}
+\part*{Приближённые вычисления I}
+\vskip-\baselineskip
+\z Вычислите приближённо значения обыкновенных дробей: $\displaystyle{\frac{1}{3}}$, $\displaystyle{\frac{1}{7}}$, $\displaystyle{\frac{1}{9}}$, округлив до двух значащих цифр. На сколько процентов (с точностью до целых) в каждом случае отличается приближённое значение от точного?
+\vskip0.25\baselineskip
+Сделаем расчёт для $\displaystyle{\frac{1}{3}}$. Приближённое значение равно $0{,}33$, поэтому справедливо равенство 
+\setlength{\belowdisplayskip}{0.4\baselineskip} 
+\setlength{\abovedisplayskip}{0.4\baselineskip}
+\begin{equation*}
+\frac{\frac{1}{3}-0{,}33}{\frac{1}{3}} = 1 - 3\cdot 0{,}33 = 0{,}01 = 1\:\%.
+\end{equation*}
+Аналогичные вычисления для двух других дробей дают: $0{,}14$ и $2\:\%$; $0{,}11$ и $1\:\%$.
+
+\z Число $\pi$ --- иррациональное. На сколько процентов приближённое значение числа $\pi$, равное $3$; $3{,}1$; $3{,}14$, отличается от приближённого значения, равного $3{,}14159$? Ответ дайте с точностью до одной значащей цифры. 
+\vskip0.25\baselineskip
+Расчёт для приближённого значения $3$. 
+\setlength{\belowdisplayskip}{0.4\baselineskip} 
+\setlength{\abovedisplayskip}{0.4\baselineskip}
+\begin{equation*}
+\frac{3{,}14159-3}{3{,}14159} \approx 0{,}045 = 4{,}5\:\%.
+\end{equation*}
+В двух других случаях получаются значения: $1\:\%$; $0{,}05\:\%$.
+
+\z Радианная мера развёрнутого угла ($180^{\circ}$) равна $\pi$. Заполните пустые клетки таблицы \ref{angles_sins}. Используйте калькулятор. В этой задаче следует считать, что число $\pi$ приближённо равно $3{,}1416$. Тригонометрические функции следует вычислять от углов, заданных в градусах. Вычисленные значения следует округлить до десятитысячных. 
+\vskip 0.2cm
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.6} %% increase table row spacing
+\renewcommand{\tabcolsep}{12 pt}
+\small
+\centering{
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+$\alpha$,~град & 0,5 & 1,0 & 2,0 & 5,0 & 10,0 & 15,0 & 30,0\\
+\hline
+$\alpha$,~рад &  &  &  &  &  &  &  \\
+\hline
+$\sin \alpha$ &  &  &  &  &  &  &  \\
+\hline
+$\tg \alpha$ &  &  &  &  &  &  &  \\
+\hline
+$\cos \alpha$ &  &  &  &  &  &  &  \\
+\hline
+\end{tabular}
+}
+\caption{}
+\label{angles_sins}
+\end{table}
+\normalsize
+\indent Угол в градусах пересчитывается в угол в радианах по формуле
+\setlength{\belowdisplayskip}{0.4\baselineskip} 
+\setlength{\abovedisplayskip}{0.4\baselineskip}
+\begin{equation*}
+\alpha\:(\text{рад}) = \frac{\alpha\:(\text{град})}{180}\cdot \pi.
+\end{equation*}
+
+\z Определите значения угла $\alpha$ в градусах (округлив до десятых) и радианах (округлив до сотых), если известен $\sin\alpha$, таблица \ref{arcsin}. Если ваш калькулятор снабжён функцией $\arcsin$ (обычно обозначается <<asin>>), возвращающей значение угла для заданного синуса, можно её использовать. Если нет, рекомендуем решать подбором, используя функцию sin.
+\vskip 0.2cm
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.6} %% increase table row spacing
+\renewcommand{\tabcolsep}{12 pt}
+\small
+\centering{
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+$\sin \alpha$& 0,2 & 0,3 & 0,5 & 0,75 & 0,9\\
+\hline
+$\alpha$,~град  &  &  &  &  &      \\
+\hline
+$\alpha$,~рад&  &  &  &  &    \\
+\hline
+\end{tabular}
+}
+\caption{}
+\label{arcsin}
+\end{table}
+
+
+\vskip-0.5\baselineskip
+\begin{bclogo}[logo=\bccrayon, margeG=-0.4, margeD=0, noborder = true, couleurBarre = darkred]{Погрешность (или точность) приближения}
+Пусть $f$ --- точное значение некоторой величины, а $f_{a}$ --- приближённое, обозначим: $\Delta f = |f-f_{a}|$ --- \textsl{отклонение} приближённого значения от точного. Будем называть  \textsl{погрешностью приближения} отношение: $\delta f =\displaystyle{\frac{\Delta f}{f}}$. Договоримся выражать погрешность приближения в процентах, округляя до одной или двух значащих цифр. Словосочетание \textsl{точность приближения} имеет тот же смысл, что и \textsl{погрешность приближения}.
+\end{bclogo}
+\vskip-0.5\baselineskip
+
+\z При каких $x$ в выражении $\displaystyle{x+\frac{1}{x}}$ можно пренебречь первым слагаемым, а при каких вторым, так чтобы точность приближения была не хуже $4\:\%$ в каждом случае?
+\vskip0.25\baselineskip
+Обозначим: $f=\displaystyle{x+\frac{1}{x}}$. Если первым слагаемым можно пренебречь, то:  $x \ll \displaystyle{\frac{1}{x}}$,  $f_{a} = \displaystyle{\frac{1}{x}}$, для определённости считаем $x>0$. Тогда:
+\begin{equation*}
+\delta f = \frac{x}{x+\cfrac{1}{x}} = \frac{x^{2}}{x^{2}+1}\approx x^{2},
+\label{example_1_f}
+\end{equation*}
+откуда следует, что при $x$: $x^{2}< 0{,}04$, $f \approx \displaystyle{\frac{1}{x}}$ c точностью не хуже $4\:\%$. Легко видеть, что: $x < 0{,}2$.\\ 
+\indent Во втором случае, когда можно пренебречь слагаемым $\displaystyle{\frac{1}{x}}$ по сравнению с $x$, делая аналогично, получаем: $\delta f \approx \displaystyle{\frac{1}{x^{2}}}$, $x> 5$.
+\setcounter{figure}{\thezadacha}
+\z Пусть $P_{4}$ --- периметр квадрата, описанного около окружности радиусом $R$, а $p_4$ --- периметр квадрата, вписанного в эту окружность (см. рис. \ref{multi_angl}). Полусумма периметров $L_{4} =\displaystyle{\frac{P_{4}+p_4}{2}}$ даёт оценку длины окружности. Аналогичные оценки можно сделать, используя вместо квадрата любые другие правильные $n$-угольники. Точность приближения при этом можно оценить (!) по формуле $\delta L_{n} \approx \displaystyle{\frac{P_{n}-p_{n}}{P_{n}+p_n}}$. Определите точность $\delta L_{n}$ для $n=4$ и $n = 6$.
+
+\begin{figure}[h]
+\centering
+{
+\includegraphics[]{multi_angl.eps}
+}
+\caption{}
+       \label{multi_angl} 
+\end{figure}
+
+Решим для шестиугольников. Длина стороны вписанного шестиугольника равна радиусу $R$, длина стороны описанного шестиугольника находится по теореме Пифагора: $\displaystyle{\frac{2R}{\sqrt{3}}}$. По формуле из условия:
+\begin{equation*}
+\delta L_{6} = \frac{\frac{2}{\sqrt{3}}-1}{\frac{2}{\sqrt{3}}-1} = \frac{2-\sqrt{3}}{2+\sqrt{3}}\approx 7\:\%.
+\end{equation*}
+Отметим, что уже для $n=12$ получится $\delta L_{12}= 0{,}14\:\%$.
+
+\z Округление физических констант
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.6} %% increase table row spacing
+\renewcommand{\tabcolsep}{10 pt}
+\centering{
+\begin{tabular}{|l|c|c|c|}
+\hline
+Постоянная & Таблица & Округление & Точность  \\
+\hline
+G,\:$\cdot10^{-11}$\:$\hbox{Н}\cdot\hbox{м}^{2}/\hbox{кг}^{2}$ &6,67&7  &5\%     \\
+\hline
+$g$,\:$\hbox{Н}/\hbox{кг}$  &9,8& 10&2\%      \\
+\hline
+$R$,\:$\hbox{Дж}/(\hbox{моль}\cdot\hbox{К}) $  &8,31& 8&3,7\%      \\
+\hline
+$RT_{(t = 20{^{\circ}}\,{\textup{C})}}$,\:$\hbox{Дж}/\hbox{моль}$  & 2434,8&$2500$ & 2,7\%   \\
+\hline
+$c_{\hbox{\footnotesize{вод.}}}$,\:$\hbox{Дж}/(\hbox{кг}\,{^{\circ}}\,{\hbox{C}})$  &4180 &$4000$ & 4,3\%   \\
+\hline
+\end{tabular}
+}
+\caption{}
+\end{table}
+\z В пачке бумаги $500 \pm 10$ листов. Толщину пачки измеряют, оценивают погрешность, получают:
+$D = 45 \pm 1~\hbox{мм}$. Чему равна наиболее вероятная толщина одного листа $d_{0}$? Оцените точность определения толщины листа $\delta d$.
+\vskip0.25\baselineskip
+Cлова в условии <<\textsl{наиболее вероятная толщина}>> --- дань терминологии. Найдём $d_{\text{min}}$ и $d_{\text{max}}$. Имеем: $d_{\text{min}} = \displaystyle{\frac{44~\hbox{мм}}{510} \approx 8{,}6\cdot10^{-2}~\hbox{мм}}$, $d_{\text{max}} \approx 9{,}4\cdot10^{-2}~\hbox{мм}.$ Далее ответ: $d_{0}=\displaystyle{\frac{d_{\text{min}}+d_{\text{max}}}{2} \approx 9{,}0\cdot10^{-2}~\hbox{мм}}$, $\delta d =\displaystyle{\frac{d_{\text{max}}-d_{\text{min}}}{d_{\text{max}}+d_{\text{min}}} = 4\:\%}$.
+\vskip-0.5\baselineskip
+\begin{bclogo}[logo=\bccrayon, margeG=-0.4, margeD=0, noborder = true, couleurBarre = darkred]{Погрешность суммы и разности}
+Пусть приближённое значение величины $x$ равно $x_{a}$ и оценка отклонения равна  $\Delta x$, а приближённое значение величины $y$ равно $y_{a}$ с отклонением $\Delta y$, тогда приближённое значение величины $f = x\pm y$ равно $f_{a} = x_{a} \pm y_{a}$, а  отклонение приближённого значения от точного имеет оценку $\Delta f = \Delta x + \Delta y$.
+\end{bclogo}
+\vskip-0.5\baselineskip
+
+\z Пусть $S = x+y$, $D = x-y$. Известно, что: $x = 10 \pm 1$, $y = 8 \pm 1$. Определите величину $\delta S$ и $\delta D$.
+\vskip0.25\baselineskip
+Отметим, что точности заданных величин равны: $\delta x = 10\%$, $\delta y = 12{,}5\%$.\\
+По определению отклонения суммы и разности равны соответственно: $\Delta S =$ $= \Delta D = 2$. \\
+Точность определения суммы равна $\displaystyle{\delta S =\frac{\Delta S}{S} = \frac{2}{18}\approx 11\:\%}$.\\
+Точность определения разности равна $\displaystyle{\delta D =\frac{\Delta D}{D} = \frac{2}{2}=100\:\%}$.
+Получается, что по данным в условии $x$ и $y$ определить $x-y$ нельзя!
+
+\vskip-0.05\baselineskip
+\begin{bclogo}[logo=\bccrayon, margeG=-0.4, margeD=0, noborder = true, couleurBarre = darkred]{Оценка точности произведения и частного}
+Пусть $x_{a}$ --- приближённое значение величины $x$, найденное с точностью $\delta x$, при этом $\delta x << 1$, например $\delta x < 10\%$. Пусть $y_{a}$ --- приближённое значение величины $y$, найденное с точностью $\delta y$, $\delta y << 1$. Тогда приближённое значение величины $M = x\cdot y$ равно $M_{a} = x_{a}y_{a}$, а его точность имеет оценку $\delta M = \delta x + \delta y$. Приближённое значение величины $D = \displaystyle{\frac{x}{y}}$ равно $D_{a} = \displaystyle{\frac{x_{a}}{y_{a}}}$ с точностью $\delta D = \delta x + \delta y$. 
+\end{bclogo}
+\vskip-0.75\baselineskip
+
+\z Приближённое значение радиуса $R$ окружности равно $R_{a}$ и найдено с точностью $5\:\%$. Приближённое значение площади соответствующего круга определяют по формуле: $S_{a} \approx 3R_{a}^{2}$. Найдите точность приближения. Какой наилучшей точности определения $S$ можно достичь при заданной точности $\delta R$?
+\vskip0.25\baselineskip
+Поскольку $\pi \approx 3$ c точностью $\delta \pi = 5\%$ искомая точность равна 
+\setlength{\belowdisplayskip}{0.25\baselineskip} 
+\setlength{\abovedisplayskip}{0.25\baselineskip}
+\begin{equation*}
+\delta S = \delta \pi + 2\cdot \delta R = 15\%.
+\end{equation*}
+\begin{equation*}
+\delta S_{\hbox{\footnotesize{нилучш.}}} = 2\cdot \delta R = 10\%.
+\end{equation*}
+
+\z В одной  задаче по графику определялись значения моментов времени: $T_{1}=3{,}01\pm 0{,}03~\hbox{с}$, $T_{2}=3{,}89\pm 0{,}03~\hbox{с}$, $T_{3}= 4{,}61\pm 0{,}03~\hbox{с}$. Далее вычисляли величины: $t_{1} = T_{2}- T_{1}$ и $t_{2} = T_{3}- T_{2}$. Далее определяли значение коэффициента $k = \displaystyle{\frac{t_{2}}{t_{1}}}$ и наконец по формуле 
+\setlength{\belowdisplayskip}{0.25\baselineskip} 
+\setlength{\abovedisplayskip}{0.25\baselineskip}
+\begin{equation*}
+H =\frac{gt_{1}^{2}}{8 k^{2}},
+\end{equation*}
+где $g$ --- ускорение свободного падения, определяли искомую величину $H$. Чему равна точность определения $H$ по данным задачи?
+\vskip0.25\baselineskip
+Найдём сначала точность приближённых значений $\delta t_{1}$ и $\delta t_{2}$ 
+\setlength{\belowdisplayskip}{0.25\baselineskip} 
+\setlength{\abovedisplayskip}{0.25\baselineskip}
+\begin{equation*}
+\delta t_{1} = \frac{0{,}06}{0{,}88} \approx 7\,\%, \quad \delta t_{2} = \frac{0{,}06}{0{,}72} \approx 8\,\%.
+\end{equation*}
+Точность вычисления коэффициента $k$ равна $\delta k \approx 15\,\% $. Таким образом в лучшем случае искомая точность равна 
+\setlength{\belowdisplayskip}{0.25\baselineskip} 
+\setlength{\abovedisplayskip}{0.25\baselineskip}
+\begin{equation*}
+\delta H = 2\cdot\delta t_{1}+2\cdot\delta k = 44\,\%.
+\end{equation*}
+Это называется \textsl{накопление ошибок}.
+
+\vskip-0.5\baselineskip
+\begin{bclogo}[logo=\bccrayon, margeG=-0.4, margeD=0, noborder = true, couleurBarre = darkred]{Приближённые формулы}%
+Для малых углов $\alpha$ (если $\alpha$ выражен в радианах, то $|\alpha|\ll 1$) справедливы соотношения:
+\setlength{\belowdisplayskip}{0.5\baselineskip} 
+\setlength{\abovedisplayskip}{0.4\baselineskip}
+\begin{equation}
+\sin \alpha \approx \alpha, \quad  \tg \alpha \approx \alpha, \quad \cos \alpha \approx 1.
+\label{sin_tan_approx}
+\end{equation}
+Для $|x| \ll 1$ верны приближённые равенства:
+\begin{equation}
+\frac{1}{1+x} \approx 1-x, \quad  (1+x)^{2} \approx 1+2x, \quad \sqrt{1+x} \approx 1+\frac{x}{2}.
+\label{power_approx}
+\end{equation} 
+\end{bclogo}
+\vskip-0.5\baselineskip
+\z Для приближённых формул из первого столбца таблицы \ref{polynom_est} впишите в свободные клетки таблицы точность приближения для разных $x$.
+\vskip 0.05cm
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.8} %% increase table row spacing
+\renewcommand{\tabcolsep}{12 pt}
+
+\small
+\centering{
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+  $|x|$ & 0,01 & 0,10 & 0,20 & 0,40  \\
+\hline
+\raisebox{0.2\height}{$\frac{1}{1+x}\approx 1-x$}&  &   &  &  \\
+\hline
+\raisebox{0.2\height}{$\sqrt{1+x}\approx 1+\frac{x}{2}$} &   &   &   &   \\
+\hline
+\raisebox{0.2\height}{$(1+x)^{2}\approx 1+2x$} & &  &  &  \\
+\hline
+\end{tabular}
+}
+\caption{}
+\label{polynom_est}
+\end{table}
+\vskip-0.5\baselineskip
+\z Точность приближения для тригонометрических функций
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.5} %% increase table row spacing
+\renewcommand{\tabcolsep}{8 pt}
+\small
+\centering{
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+$\alpha$,~град &  1,0 &  5,0 & 10,0 & 15,0 & 30,0\\
+\hline
+$\alpha$,~рад & 0,0175  &0,0873  &0,1745  &0,2618  &0,5236  \\
+\hline
+$\sin \alpha$ &0,0175  &0,0872  &0,1736  &0,2588  &0,5000  \\
+\hline
+$\delta (\sin)$ & $< 0{,}1\:\%$  &$0{,}1\:\%$  &$0{,}5\:\%$  &$1{,}1\:\%$  &$4{,}5\:\%$  \\
+\hline
+$\tg \alpha$ &0,0175  &0,0875  &0,1763  &0,2679  &0,5774  \\
+\hline
+$\delta (\tg)$ & $< 0{,}1\:\%$  &$0{,}2\:\%$  &$1\:\%$  &$2{,}3\:\%$  &$9{,}3\:\%$  \\
+\hline
+\end{tabular}
+}
+\caption{}
+\label{sin_tan_est}
+\end{table}
+\z Если $(1-x)$ --- частное от деления $1$ на $(1+x)$, то чему может быть равен остаток? Получите выражение в виде многочлена от $x$. 
+\vskip0.25\baselineskip
+ Ниже показано деление единицы на $1+x$, которое и даёт ответ к задаче.  
+
+\[
+\arraycolsep=0.05em
+\renewcommand{\arraystretch}{1.1}
+\begin{array}{rrrrr@{\,}r|l}
+1&&&&&& {\,}1+x\\
+\cline{7-7}
+1&+x&&&&&   {\,}{\vcenter{\hbox{$1-x+x^{2}$}}}\\
+\cline{1-2}
+&-x&  \\
+&-x& -x^{2} \\
+\cline{2-3}
+& & {\vcenter{\hbox{$x^{2}$}}}\\
+& & x^{2}&  +x^{3}\\
+\cline{3-4}
+& & &  {\vcenter{\hbox{$-x^{3}$}}}
+\end{array}
+\]
+Таким образом, если частное равно $1-x$, то остаток равен $x^{2}$. Нелинейный член в частном показан, чтобы стало понятно, что процесс можно продолжать до бесконечности. 
+
+\vskip-0.25\baselineskip
+\begin{bclogo}[logo=\bccrayon, margeG=-0.4, margeD=0, noborder = true, couleurBarre = darkred]{Оценка с точностью до $x^{n}$}
+Будем говорить, что функция $f(x)$ при малых $x$ \textit{имеет оценку с точностью до} $x^{n}$, если она представляется (при малых $x$) в виде: 
+\begin{equation*}
+f(x) \approx f(0)+a_{1}x+a_{2}x^{2}+\ldots+a_{n}x^{n},
+\label{small_x_approx}
+\end{equation*}
+где $f(0)$ --- значение функции $f(x)$ при $x=0$; $a_{1}, a_{2},\ldots,a_{n}$ --- действительные числа. Оценка с точностью до $x$ называется \textit{линейным приближением}.
+\end{bclogo}
+\vskip-0.5\baselineskip
+\z Из предыдущего примера видно, что с точностью до $x^{2}$ при малых $x$ справедливо приближённое равенство
+\[
+\frac{1}{1+x} \approx 1-x+x^{2}.
+\]
+Также становится ясно, как получить более точные приближения. 
+
+\z Оценивая в линейном по малому параметру $x$ приближении алгебраические выражения, следует на каждом шаге пренебрегать слагаемыми, пропорциональными старшим степеням $x$. Например:
+
+\[
+(1+x)(2+x)(3+x)= 6 + 11x+6x^{2}+x^{3}\approx 6 + 11x;
+\]
+\[
+\frac{1-x}{2+3x} = \frac{1-x}{2}\cdot \frac{1}{1+\frac{3x}{2}}\approx \frac{1}{2}(1-x)\left(1-\frac{3x}{2}\right)\approx \frac{1}{2}\left(1-\frac{5x}{2}\right);
+\]
+\[
+\frac{1-x}{1+x+x^{2}} \approx \frac{1-x}{1+x}\approx (1-x)^{2}\approx 1-2x.
+\]
+\z Используя условия $\Delta r \ll r$, $\Delta r \ll R$ преобразуйте выражение:
+ \[
+\frac{R(r + \Delta r)}{R+r + \Delta r} = \frac{Rr}{R+r}\cdot \frac{1+\frac{\Delta r}{r}}{1+\frac{\Delta r}{R+r}}\approx \frac{Rr}{R+r}\left(1+\frac{\Delta r}{r}-\frac{\Delta r}{R+r} \right)=\frac{Rr}{R+r}\left(1+\delta r\frac{R}{R+r} \right).
+\]
+Введено обозначение малого параметра: $\delta r = \displaystyle{\frac{\Delta r}{r}}$.
+
+\z Оцените в линейном приближении при малых $x$ выражение:
+\[
+\frac{\sqrt{(x+2)(3x+2)}}{3+5x}.
+\]
+\vskip0.25\baselineskip
+Преобразуем сначала числитель, используя формулу для корня из (\ref{power_approx}). 
+\[
+\sqrt{(x+2)(3x+2)} \approx \sqrt{4+8x} = 2\sqrt{1+2x}\approx 2\left(1+\frac{2x}{2}\right) = 2(1+x).
+\]
+Исходное выражение теперь принимает вид:
+\[
+\frac{\sqrt{(x+2)(3x+2)}}{3+5x}\approx \frac{2(1+x)}{3+5x} = \frac{2}{3}\cdot \frac{1+x}{1+\frac{5x}{3}}.
+\]
+<<Переносим>> знаменатель в числитель и получаем ответ:
+\[
+\frac{2}{3}\cdot \frac{1+x}{1+\frac{5x}{3}} \approx \frac{2}{3}(1+x)\left(1-\frac{5x}{3}\right) \approx \frac{2}{3}\left(1-\frac{2x}{3}\right).
+\]
+
+\z Приближённые формулы $\sin x \approx x$ и $\tg x \approx x$ справедливы не только в линейном, но и в квадратичном (с точностью до $x^{2}$) приближении, а формула $\cos x \approx 1$ верна только в линейном приближении. Получите приближённую формулу для $\cos x$ в квадратичном приближении. 
+\vskip0.25\baselineskip
+Рассмотрим прямоугольный треугольник с гипотенузой, равной $1$, и острым углом, равным $x$. Один из его катетов равен $\cos x$, а другой равен $\sin x \approx x$ с точностью до слагаемых, пропорциональных $x^{2}$. По теореме Пифагора:
+\[
+\cos^{2}x \approx 1-x^{2},
+\]
+Откуда, используя приближённую формулу для корня, получаем ответ:
+\[
+\cos x \approx 1-\frac{x^{2}}{2}.
+\]
+
+
+
+\end{document}
