@@ -6,6 +6,24 @@
 # Корзина Obsidian
 .trash/
 
+# LaTeX — временные файлы компиляции (не нужны в репозитории)
+*.aux
+*.log
+*.bcf
+*.blg
+*.bbl
+*.out
+*.run.xml
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+texput.log
+
+# LaTeX — скомпилированные PDF (тяжёлые бинарники, регенерируются)
+sources/**/*.pdf
+sources/*.pdf
+
 # Системные файлы Windows
 Thumbs.db
 desktop.ini
