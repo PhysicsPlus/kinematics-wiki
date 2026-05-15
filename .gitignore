@@ -21,8 +21,23 @@
 texput.log
 
 # LaTeX — скомпилированные PDF (тяжёлые бинарники, регенерируются)
-sources/**/*.pdf
+sources/chapters/**/*.pdf
 sources/*.pdf
+
+# Учебники и источники в PDF (авторские права + большой размер)
+# Сводки-index.md хранятся в git, сами PDF — только локально
+sources/маркеев/*.pdf
+sources/сивухин-т1/*.pdf
+sources/kleppner/*.pdf
+sources/кикоин-9кл/*.pdf
+sources/балашов-мякишев/*.pdf
+sources/берклеевский-т1/*.pdf
+sources/кингсеп-т1/*.pdf
+sources/морин/*.pdf
+sources/аносов/*.pdf
+sources/пятницкий/*.pdf
+sources/kalda/*.pdf
+sources/бутиков-кеплер/*.pdf
 
 # Системные файлы Windows
 Thumbs.db
