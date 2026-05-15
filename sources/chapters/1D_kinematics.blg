@@ -1,0 +1,9 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is '1D_kinematics.blg'
+[79] biber-MSWIN64:342> INFO - === 
+[153] Biber.pm:421> INFO - Reading '1D_kinematics.bcf'
+[281] Biber.pm:1002> INFO - Found 6 citekeys in bib section 0
+[295] Biber.pm:4487> INFO - Processing section 0
+[302] Biber.pm:4678> INFO - Looking for bibtex file 'lit.bib' for section 0
+[604] Utils.pm:479> ERROR - Cannot find 'lit.bib'!
+[605] Biber.pm:137> INFO - ERRORS: 1

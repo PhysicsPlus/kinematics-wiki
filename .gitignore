@@ -1,0 +1,14 @@
+# Obsidian — личные настройки рабочего пространства (не нужны коллегам)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+
+# Корзина Obsidian
+.trash/
+
+# Системные файлы Windows
+Thumbs.db
+desktop.ini
+
+# macOS (на случай если коллеги на маке)
+.DS_Store

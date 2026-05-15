@@ -1,0 +1,1089 @@
+% ============================================================
+% БИБЛИОГРАФИЧЕСКАЯ БАЗА — lit.bib
+% Листки задач по физике, СУНЦ МГУ
+%
+% Структура файла:
+%   1. Учебники (многотомные издания — сначала родитель, затем тома)
+%      1а. Сивухин — Общий курс физики
+%      1б. Берклеевский курс физики
+%      1в. Кингсеп — Основы физики
+%      1г. Бутиков — Физика
+%      1д. Ландау, Лифшиц — Теоретическая физика
+%      1е. Мякишев — профильные учебники (отдельные тома)
+%      1ж. Прочие учебники (монотомные)
+%   2. Задачники
+%      2а. Многотомные (родитель + тома)
+%      2б. Монотомные
+%   3. Статьи (журнал «Квант» и зарубежные журналы)
+%   4. Интернет-ресурсы
+%      4а. Олимпиадные архивы
+%      4б. Курсы и учебные материалы
+%      4в. Прочие
+%   5. Служебная запись JabRef
+% ============================================================
+
+
+% ============================================================
+% 1. УЧЕБНИКИ
+% ============================================================
+
+% ── 1а. Сивухин — Общий курс физики (5 томов) ───────────────────────────────
+
+@MVBOOK{Sivuhin:ss,
+  title     = {Общий курс физики. Учебное пособие. Для вузов.},
+  publisher = {ФИЗМАТЛИТ},
+  author    = {Сивухин, Д. В.},
+  volumes   = 5,
+  address   = {М.},
+  edition   = {6-е изд., стереот.},
+  language  = {russian},
+  volsorder = {vb},
+}
+
+@Book{Sivuhin:ss1,
+  title     = {Механика.},
+  year      = {2010},
+  volume    = {1},
+  crossref  = {Sivuhin:ss},
+  keywords  = {base},
+  pagetotal = {560},
+}
+
+@Book{Sivuhin:ss3,
+  title     = {Электричество.},
+  year      = {2020},
+  volume    = {3},
+  crossref  = {Sivuhin:ss},
+  keywords  = {plan, base},
+  pagetotal = {656},
+}
+
+% Дублирующая запись (отдельный том без crossref) — оставлена для совместимости
+@BOOK{SivuhinEl,
+  title     = {Общий курс физики. Учебн. пособие для вузов в 5 т.},
+  publisher = {ФИЗМАТЛИТ},
+  year      = {2010},
+  author    = {Сивухин, Д. В.},
+  volume    = {3. Электричество},
+  address   = {М.},
+  edition   = {5-е},
+  language  = {russian},
+  pagetotal = {656},
+}
+
+% ── 1б. Берклеевский курс физики ─────────────────────────────────────────────
+
+@MVBook{Berkeley:ss,
+  title     = {Берклеевский курс физики.},
+  year      = {1974},
+  publisher = {Издательство <<Наука>>: Главн. ред. физ.-мат. лит.},
+  address   = {М.},
+  edition   = {2-е изд., испр.},
+  volsorder = {vb},
+  keyword   = plan,
+}
+
+@Book{Berkeley:ss1,
+  crossref     = {Berkeley:ss},
+  title        = {Механика},
+  volume       = {1},
+  author       = {Киттель, Ч. and Найт, В. and Рудерман, М.},
+  origlanguage = {english},
+  editor       = {Шальникова, A. B. and Ахматова, А. С.},
+  pagetotal    = {480},
+  language     = {russian},
+}
+
+@Book{Berkeley:ss3,
+  author    = {Ф. Крауфорд},
+  title     = {Волны},
+  year      = {1976},
+  volume    = {3},
+  crossref  = {Berkeley:ss},
+  language  = {russian},
+  pagetotal = {528},
+}
+
+% ── 1в. Кингсеп — Основы физики (2 тома) ─────────────────────────────────────
+
+@MvBook{Kingsep:ss,
+  address   = {М.},
+  author    = {А. С. Кингсеп and Г. Р. Локшин and О. А. Ольхов},
+  editor    = {Кингсепа, А. С.},
+  language  = {russian},
+  publisher = {ФИЗМАТЛИТ},
+  title     = {Основы физики. Курс общей физики: Учебн.},
+  volsorder = {vb},
+  volumes   = {2},
+}
+
+@Book{Kingsep:ss1,
+  title     = {Механика, электричество и магнетизм, колебания и волны, волновая оптика},
+  volume    = {1},
+  crossref  = {Kingsep:ss},
+  language  = {russian},
+  pagetotal = {506},
+}
+
+% Дублирующая запись (старое издание 2001 г.) — оставлена для совместимости
+@Book{old_mipt,
+  author    = {А. С. Кингсеп and Г. Р. Локшин and О. А. Ольхов},
+  editor    = {Кингсепа, А. С.},
+  publisher = {ФИЗМАТЛИТ},
+  title     = {Основы физики. Курс общей физики: Учебн. в 2 т.},
+  year      = {2001},
+  address   = {М.},
+  volume    = {1. Механика, электричество и магнетизм, колебания и волны, волновая оптика},
+  keywords  = {base},
+  language  = {russian},
+  pagetotal = {506},
+}
+
+% ── 1г. Бутиков — Физика (3 книги) ───────────────────────────────────────────
+
+@MvBook{Butikov:ss,
+  author    = {Бутиков, Е. И. and Кондратьев, А. С.},
+  books     = {3},
+  edition   = {2-е изд.},
+  language  = {russian},
+  publisher = {ФИЗМАТЛИТ},
+  series    = {Фундаментальная и прикладная физика},
+  title     = {Физика. Учебн. пособие:},
+  volsorder = {vb},
+}
+
+@Book{Butikov:ss2,
+  title     = {Электродинамика. Оптика.},
+  year      = {2020},
+  book      = {2},
+  crossref  = {Butikov:ss},
+  keywords  = {plan, add},
+  language  = {russian},
+  pagetotal = {336},
+}
+
+% ── 1д. Ландау, Лифшиц — Теоретическая физика (10 томов) ────────────────────
+
+@MVBOOK{Landau:ss,
+  title     = {Теоретическая физика. Учебное пособие.},
+  publisher = {ФИЗМАТЛИТ},
+  author    = {Ландау, Л. Д. and Лифшиц, Е. М.},
+  volumes   = {10},
+  address   = {М.},
+  language  = {russian},
+}
+
+@Book{Landau:ss2,
+  crossref  = {Landau:ss},
+  title     = {Теория поля},
+  volume    = {2},
+  author    = {Ландау, Л. Д. and Лифшиц, Е. М.},
+  edition   = {9-е изд., стереот.},
+  year      = {2018},
+  pagetotal = {536},
+  isbn      = {978-5-9221-1568-1},
+  editor    = {Питаевского, Л. П.},
+  language  = {russian},
+}
+
+% ── 1е. Мякишев — профильные учебники ────────────────────────────────────────
+
+@Book{Balashov,
+  title     = {Физика: Механика. 10 кл.: Учеб. для углубленного изучения физики},
+  publisher = {Дрофа},
+  year      = {2004},
+  author    = {Балашов, М. М. and Гомонова, А. И. and Долицкий, А. Б. and Дрибинский, Б. Л. and Мякишев, Г. Я. and Нотов, Л. А. and Пустовалов, Г. Е. and Синяков, А. З.},
+  editor = {Мякишева, Г. Я.},  
+  edition   = {6-е},
+  address = {М.},
+  pagetotal = {496},
+  language = {russian},
+}
+
+@Book{Kikoin,
+  title     = {Физика: Учебник для 9 кл. сред. шк.},
+  publisher = {Просвещение},
+  year      = {1992},
+  author    = {Кикоин, И. К. and Кикоин, А. К.}, 
+  edition   = {2-е},
+  address = {М.},
+  pagetotal = {192},
+  language = {russian},
+}
+
+@Book{Myakishev_El,
+  author    = {Мякишев, Г. Я. and Синяков, А. З. and Слободсков, Б. А.},
+  publisher = {Дрофа},
+  title     = {Физика. Электродинамика. 10 --- 11 кл. Профильный уровень: учеб. для общеобразоват. учреждений},
+  year      = {2010},
+  address   = {Москва},
+  edition   = {10-е изд., стереотип.},
+  keywords  = {plan, add},
+  language  = {russian},
+  pagetotal = {476},
+}
+
+@Book{Myakishev_Osc,
+  author    = {Мякишев, Г. Я. and Синяков, А. З.},
+  publisher = {Дрофа},
+  title     = {Физика. Колебания и волны. 11 кл. Профильный уровень: учеб. для общеобразоват. учреждений},
+  year      = {2010},
+  address   = {Москва},
+  edition   = {9-е изд., стереотип.},
+  keywords  = {plan, add},
+  language  = {russian},
+  pagetotal = {287},
+}
+
+@Book{Myakishev_Opt,
+  author    = {Мякишев, Г. Я. and Синяков, А. З.},
+  publisher = {Дрофа},
+  title     = {Физика. Оптика. Квантовая физика. 11 кл. Профильный уровень: учеб. для углублённого изучения физики},
+  year      = {2002},
+  address   = {Москва},
+  edition   = {2-е изд., стереотип.},
+  keywords  = {plan, add},
+  language  = {russian},
+  pagetotal = {464},
+}
+
+% ── 1ж. Прочие учебники (монотомные, по алфавиту) ────────────────────────────
+
+@Book{Batigin,
+  title     = {Современная электродинамика, часть 1. Микроскопическая теория: Учебное пособие.},
+  publisher = {НИЦ <<Регулярная и хаотическая динамика>>},
+  year      = {2005},
+  author    = {Батыгин, В. В. and Топтыгин, И. Н.},
+  address   = {М.-Ижевск},
+  pagetotal = {736},
+  language  = {russian},
+}
+
+@Book{Gorelik,
+  author    = {Горелик, Г. С.},
+  editor    = {Рытова, С. М.},
+  publisher = {ФИЗМАТЛИТ},
+  title     = {Колебания и волны. Введение в акустику, радиофизику и оптику.},
+  year      = {2008},
+  address   = {М.},
+  edition   = {3-е изд.},
+  keyword   = {#plan#},
+  keywords  = {plan, base},
+  language  = {russian},
+  pagetotal = {656},
+}
+
+@Book{Jackson,
+  title        = {Классическая электродинамика},
+  publisher    = {Издательство <<МИР>>},
+  year         = {1965},
+  author       = {Джексон, Дж.},
+  origlanguage = {english},
+  translator   = {Воскресенского, Г. В. and Соловьёва, Л. С.},
+  editor       = {Бурштейна, Э. Л.},
+  pagetotal    = {704},
+  language     = {russian},
+}
+
+@Book{Jackson2003,
+  author    = {Джексон, Д.},
+  publisher = {РХД},
+  title     = {Классическая электродинамика},
+  year      = {2003},
+  address   = {М.--Ижевск},
+  edition   = {3-е изд.},
+  keywords  = {electrodynamics, maxwell equations, boundary problems, green functions},
+  language  = {russian},
+  pagetotal = {784},
+}
+
+@Book{Landsberg,
+  author    = {Ландсберг, Г. С.},
+  publisher = {ФИЗМАТЛИТ},
+  title     = {Оптика. Учеб. пособие.},
+  year      = {2021},
+  address   = {М.},
+  edition   = {7-е изд., стереот.},
+  keyword   = {#plan#},
+  keywords  = {plan, base},
+  language  = {russian},
+  pagetotal = {852},
+}
+
+@Book{Markeev,
+  author    = {Маркеев, А. П.},
+  publisher = {Редакция журнала <<Регулярная и хаотическая динамика>>},
+  title     = {Теоретическая механика: Учебник для университетов.},
+  year      = {1999},
+  address   = {М.},
+  edition   = {2-е изд., доп.},
+  keyword   = {#teormech#},
+  keywords  = {teormech},
+  language  = {russian},
+  pagetotal = {599},
+}
+
+@Book{Mayer,
+  author    = {Майер, В. В.},
+  publisher = {ФИЗМАТЛИТ},
+  title     = {Свет в оптически неоднородной среде: учебные исследования},
+  year      = {2007},
+  address   = {М.},
+  language  = {russian},
+  pagetotal = {232},
+}
+
+@Book{MIT,
+  title     = {Electromagnetic field theory: a problem solving approach},
+  publisher = {Wiley},
+  year      = {1979, 2003},
+  author    = {Zahn, Markus},
+  edition   = {Reprint ed. w/corrections},
+  language  = {english},
+  address   = {New York},
+}
+
+@Book{Morin,
+  author    = {Morin, {David} J.},
+  publisher = {Cambridge University Press},
+  title     = {Introduction to Classical Mechanics: With Problems and Solutions},
+  year      = {2008},
+  keywords  = {add},
+  language  = {english},
+  pagetotal = {734},
+  place     = {Cambridge},
+}
+
+@Book{SupCond,
+  author    = {Ципенюк, Ю. М.},
+  publisher = {Изд-во МФТИ},
+  title     = {Физические основы сверхпроводимости},
+  year      = {1996},
+  address   = {М.},
+  keywords  = {add},
+  language  = {russian},
+  pagetotal = {96},
+}
+
+@Book{TikhonovSamarsky2004,
+  author    = {Тихонов, А. Н. and Самарский, А. А.},
+  publisher = {Физматлит},
+  title     = {Уравнения математической физики},
+  year      = {2004},
+  address   = {М.},
+  edition   = {7-е изд.},
+  keywords  = {laplace equation, separation of variables, legendre polynomials, mathematical physics},
+  language  = {russian},
+  pagetotal = {800},
+}
+
+@Book{ZAHN,
+  author    = {Zahn, M.},
+  publisher = {Krieger Publishing Company},
+  title     = {Electromagnetic field theory: a problem solving approach.},
+  year      = {2003},
+  address   = {Malabar, FL},
+  language  = {english},
+  pagetotal = {727},
+  url       = {https://docs.google.com/file/d/0B21HoBq6u9TsVk5HVVo0S1YyMUk/view},
+}
+
+@Book{ZAHN1,
+  author    = {Zahn, M.},
+  publisher = {Krieger Publishing Company},
+  title     = {Electromagnetic field theory: a problem solving approach.},
+  year      = {2003},
+  address   = {Malabar, FL},
+  keywords  = {add},
+  language  = {english},
+  pagetotal = {727},
+  url       = {https://docs.google.com/file/d/0B21HoBq6u9TsVk5HVVo0S1YyMUk/view},
+}
+
+@Book{kleppner2014,
+  author    = {Kleppner, D. and Kolenkow, R.},
+  publisher = {Cambridge University Press},
+  title     = {An Introduction to Mechanics},
+  year      = {2014},
+  edition   = {Second Ed.},
+  language  = {english},
+  pagetotal = {542},
+}
+
+@book{purcell_morin_2013,
+  title     = {Electricity and Magnetism},
+  author    = {Purcell, Edward M. and Morin, David J.},
+  year      = {2013},
+  publisher = {Cambridge University Press},
+  edition   = {3rd},
+  isbn      = {978-1-107-01402-2},
+  url       = {https://rajeshvcet.home.blog/wp-content/uploads/2021/11/purcell-e.m.-morin-d.j.-electricity-and-magnetism-2013-cambridge-university-press-libgen.lc_.pdf},
+}
+
+@Book{taylor_wheeler_ru,
+  author    = {Тейлор, Эдвин Ф. and Уилер, Джон А.},
+  publisher = {Мир},
+  title     = {Физика пространства-времени},
+  year      = {1971},
+  address   = {М.},
+  keywords  = {relativity, spacetime, twins paradox},
+  language  = {russian},
+  pagetotal = {284},
+}
+
+@Book{Кикоин1976,
+  author    = {Кикоин, А. К. and Кикоин, И. К.},
+  publisher = {Наука},
+  title     = {Молекулярная физика},
+  year      = {1976},
+  address   = {М.},
+  edition   = {2-е изд.},
+  keywords  = {base},
+  language  = {russian},
+  pagetotal = {480},
+}
+
+
+% ============================================================
+% 2. ЗАДАЧНИКИ
+% ============================================================
+
+% ── 2а. Многотомные задачники (родитель + тома) ──────────────────────────────
+
+% Сборник задач Сивухина (под ред. Яковлева), 5 книг
+@MvBook{SivZad:ss,
+  address   = {М.},
+  author    = {Стрелков, С. П. and Сивухин, Д. В. and Угаров, В. А. and Яковлев, И. А.},
+  books     = {5},
+  editor    = {Яковлева, И. А.},
+  publisher = {ФИЗМАТЛИТ; ЛАНЬ},
+  title     = {Сборник задач по общему курсу физики.},
+  volsorder = {vb},
+  year      = {2006},
+}
+
+@Book{SivZad:ss1,
+  crossref  = {SivZad:ss},
+  title     = {Механика},
+  book      = {1},
+  edition   = {5-е изд., стер.},
+  pagetotal = {240},
+  language  = {russian},
+}
+
+% Сборник задач Овчинкина, 3 части
+@MvBook{Ovch:ss,
+  address   = {М.},
+  author    = {Козел, С. М. and Лейман, В. Г. and Локшин, Г. Р. and Овчинкин, В. А. and Прут, Э. В.},
+  edition   = {3-е изд., испр. и доп.},
+  editor    = {Овчинкина, В. А.},
+  language  = {russian},
+  publisher = {Физматкнига},
+  volsorder = {vb},
+  title     = {Сборник задач по общему курсу физики: Учебн. пособие: Для вузов. В трёх частях.},
+}
+
+@Book{Ovch,
+  author    = {Козел, С. М. and Лейман, В. Г. and Локшин, Г. Р. and Овчинкин, В. А. and Прут, Э. В.},
+  editor    = {Овчинкина, В. А.},
+  publisher = {Физматкнига},
+  title     = {Сборник задач по общему курсу физики: Учебн. пособие: Для вузов. В трех частях.},
+  year      = {2004},
+  address   = {М.},
+  edition   = {3-е изд., испр. и доп.},
+  volume    = {2. Электричество и магнетизм. Оптика},
+  language  = {russian},
+  pagetotal = {400},
+}
+
+@Book{Ovch:ss1,
+  title     = {Механика. Термодинамика и молекулярная физика},
+  crossref  = {Ovch:ss},
+  keywords  = {add},
+  pagetotal = {448},
+  part      = {1},
+}
+
+@Book{Ovch:ss2,
+  title     = {Электричество и магнетизм. Оптика},
+  crossref  = {Ovch:ss},
+  keywords  = {add},
+  language  = {russian},
+  pagetotal = {400},
+  part      = {2},
+}
+
+% ── 2б. Монотомные задачники (по алфавиту) ───────────────────────────────────
+
+@Book{200,
+  author    = {Гнэдиг, П. and Хоньек, Д. and Райли, К.},
+  publisher = {Бюро Квантум},
+  title     = {Двести интригующих физических задач},
+  year      = {2005},
+  address   = {М.},
+  series    = {Б-чка <<Квант>>. Вып.90},
+  keywords  = {add},
+  language  = {russian},
+  pagetotal = {272},
+}
+
+@BOOK{3800,
+  title     = {3800 задач для школьников и поступающих в вузы},
+  compiler  = {Турчина, Н. В. and Рудакова, Л. И. and Суров, О. И. and Спирин, Г. Г. and Ющенко, Т., А.},
+  address   = {М.},
+  publisher = {Дрофа},
+  year      = {2000},
+  pagetotal = {672},
+  language  = {russian},
+}
+
+@Book{Anosov,
+  author    = {Аносов, Д. В.},
+  publisher = {МЦНМО},
+  title     = {От Ньютона к Кеплеру.},
+  year      = {2006},
+  address   = {М.},
+  keyword   = {#teormech#},
+  keywords  = {teormech},
+  language  = {russian},
+  pagetotal = {272},
+}
+
+@Book{Bega,
+  author    = {Бега, Р. К. and Лебедев, В. В. and Хлюстиков, И. Н.},
+  publisher = {МЦНМО},
+  title     = {Электростатика},
+  year      = {2008},
+  address   = {М.},
+  keywords  = {add},
+  language  = {russian},
+  pagetotal = {320},
+}
+
+@Book{Brandt,
+  author    = {Брандт, Н. Н. and Миронова, Г. А. and Салецкий, А. М.},
+  publisher = {Издательство <<Лань>>},
+  title     = {Электростатика в вопросах и задачах. Пособие по решению задач для студентов: Учебное пособие.},
+  year      = {2010},
+  address   = {СПб.},
+  edition   = {2-е изд., испр.},
+  series    = {Учебники для вузов. Специальная литература},
+  keywords  = {add},
+  language  = {russian},
+  pagetotal = {288},
+}
+
+@Book{ButikovProbl,
+  author    = {Бутиков, Е. И. and Быков, А. А. and Кондратьев, А. С.},
+  publisher = {МЦНМО: Петроглиф},
+  title     = {Физика в примерах и задачах.},
+  year      = {2008},
+  address   = {М. --- С.-Пб.},
+  edition   = {3-е изд., испр. и доп.},
+  language  = {russian},
+  pagetotal = {516},
+  keywords  = {add},
+}
+
+@Book{Cheshev,
+  publisher = {Физматкнига},
+  title     = {Методическое пособие по физике для поступающих в вузы},
+  year      = {2008},
+  address   = {М.},
+  editor    = {Чешева, Ю. В.},
+  language  = {russian},
+  pagetotal = {288},
+  keywords  = {base},
+}
+
+@Book{Koz,
+  author    = {Баканина, Л. П. and Козел, С. М. and Белонучкин, В., Е.},
+  editor    = {Козела, С. М.},
+  publisher = {Просвещение},
+  title     = {Физика. Задачник. 10---11 классы : пособие для учащихся образоват. учреждений : проф. уровень},
+  year      = {2011},
+  address   = {М.},
+  series    = {Академический школьный учебник},
+  keywords  = {plan, , base},
+  language  = {russian},
+  pagetotal = {270},
+}
+
+@Book{Lebedev2003,
+  author    = {Лебедев, Н. Н.},
+  publisher = {Лань},
+  title     = {Специальные функции и их приложения},
+  year      = {2003},
+  address   = {СПб.},
+  edition   = {2-е изд., стереотипное},
+  keywords  = {special functions, legendre polynomials},
+  language  = {russian},
+  pagetotal = {444},
+}
+
+@Book{MosGor,
+  author    = {Варламов, С. Д. and Зинковский, В. И. and Семёнов, М. В. and Старокуров, Ю. В. and Шведов, О. Я. and Якута, А. А.},
+  editor    = {Семёнова, М. В. and Якуты, А. А.},
+  publisher = {МЦНМО},
+  title     = {Задачи Московских городских олимпиад по физике. 1986---2005},
+  year      = {2006},
+  address   = {М.},
+  edition   = {2-е изд., исправл.},
+  keywords  = {plan, add},
+  language  = {russian},
+  pagetotal = {623},
+  url       = {http://genphys.phys.msu.ru/ol/olimpbook.pdf},
+}
+
+@BOOK{Petrov,
+  title     = {Мифы современной физики},
+  publisher = {Книжный дом <<ЛИБРОКОМ>>},
+  year      = {2012},
+  author    = {Петров, В. М.},
+  language  = {russian},
+  pagetotal = {224},
+  address   = {М.},
+}
+
+@Book{problems,
+  author    = {Уокер, Джирл},
+  publisher = {Манн, Иванов и Фербер},
+  title     = {Новый физический фейерверк. Сборник качественных задач по физике},
+  year      = {2019},
+  address   = {М.},
+  keywords  = {add},
+  language  = {russian},
+  pagetotal = {465},
+}
+
+@Book{Pyatnitsky,
+  author    = {Пятницкий, Е. С. and Трухан, Н. М. and Ханукаев, Ю. И. and Яковенко, Г. Н.},
+  publisher = {Наука. Главн. ред. физ.-мат. лит.},
+  title     = {Сборник задач по аналитической механике: Учебное пособие},
+  year      = {1980},
+  address   = {М.},
+  keywords  = {add},
+  language  = {russian},
+  pagetotal = {320},
+}
+
+@Book{Sav,
+  author    = {Воробьёв, И. И. and Зубков, П. И. and Кутузова, Г. А. and Савченко, О. Я. and Трубачёв, А. М. and Харитонов, В. Г.},
+  editor    = {Савченко, О. Я.},
+  publisher = {Новосибирский государственный университет},
+  title     = {Задачи по физике: Учебное пособие.},
+  year      = {1999},
+  address   = {Новосибирск},
+  edition   = {3-е изд., испр. и доп.},
+  keywords  = {plan, base},
+  language  = {russian},
+  pagetotal = {370},
+  url       = {https://inp.nsk.su/~telnov/mech/zadachniki/savchenko.pdf},
+}
+
+@Book{Sil_Zad,
+  author    = {Бельченко, Ю. И. and Гилёв, Е. А. and Силагадзе, З. К.},
+  publisher = {НИЦ <<Регулярная и хаотическая динамика>>},
+  title     = {Механика частиц и тел в задачах},
+  year      = {2008},
+  address   = {М.-Ижевск},
+  keywords  = {add},
+  language  = {russian},
+  pagetotal = {248},
+}
+
+@Book{tuy,
+  author    = {Чудновский, А. В. and Григорьев, Ю. М. and Муравьёв, В. М. and Потапов, В. Ф.},
+  editor    = {Чудновского, А. В.},
+  publisher = {МЦНМО},
+  title     = {Теоретические задачи по физике. Международная олимпиада <<Туймаада>> 1994 -- 2012},
+  year      = {2013},
+  address   = {М.},
+  language  = {russian},
+  pagetotal = {262},
+}
+
+@Book{vorobev_sto,
+  author    = {Воробьев, Иван Игнатьевич},
+  publisher = {Наука},
+  title     = {Теория относительности в задачах},
+  year      = {1989},
+  address   = {М.},
+  language  = {russian},
+  pagetotal = {175},
+}
+
+@Book{VseRoss,
+  editor    = {Козела, С. М. and Слободянина, В. П.},
+  publisher = {<<Вербум-М>>},
+  title     = {Всероссийские олимпиады по физике. 1992---2001},
+  year      = {2002},
+  address   = {М.},
+  keywords  = {plan, add},
+  language  = {russian},
+  pagetotal = {392},
+}
+
+@Book{WC,
+  author    = {Бычков, А. И. and Крюков, П. А.},
+  publisher = {МЦНМО},
+  title     = {Цепи постоянного тока},
+  year      = {2019},
+  address   = {М.},
+  keywords  = {add},
+  language  = {russian},
+  pagetotal = {112},
+}
+
+
+% ============================================================
+% 3. СТАТЬИ
+% ============================================================
+
+% ── Журнал «Квант» ───────────────────────────────────────────────────────────
+
+@Article{chern,
+  author   = {Черноуцан, А.},
+  title    = {Проводящий шар в однородном поле},
+  journal  = {Квант},
+  year     = {2001},
+  number   = {1},
+  pages    = {39-43},
+  language = {russian},
+}
+
+@Article{varl,
+  author   = {Варламов, С. Д.},
+  title    = {<<Исправленный>> закон Кулона},
+  journal  = {Квант},
+  year     = {2011},
+  number   = {4},
+  pages    = {34-35},
+  language = {russian},
+}
+
+% ── Зарубежные журналы ───────────────────────────────────────────────────────
+
+@Article{Average_velocity,
+  author  = {Шапиро, А. И.},
+  title   = {Поговорим о средней скорости},
+  journal = {Квант},
+  year    = {1986},
+  number  = {9},
+  pages   = {25-27},
+  language = {russian},
+}
+
+@article{Bochko_2020,
+  title     = {On the electrostatic potential and electric field of a uniformly charged disk},
+  volume    = {41},
+  ISSN      = {1361-6404},
+  DOI       = {10.1088/1361-6404/ab87aa},
+  number    = {4},
+  journal   = {European Journal of Physics},
+  publisher = {IOP Publishing},
+  author    = {Bochko, V. and Silagadze, Z. K.},
+  year      = {2020},
+  url       = {https://arxiv.org/abs/2004.04540},
+}
+
+@article{GeigerMarsden1913,
+  author  = {Geiger, H. and Marsden, E.},
+  title   = {The Laws of Deflection of $\alpha$ Particles through Large Angles},
+  journal = {Philosophical Magazine},
+  series  = {Series 6},
+  volume  = {25},
+  number  = {148},
+  pages   = {604--623},
+  year    = {1913},
+}
+
+@Article{Kik_art_1,
+  author  = {Кикоин, А. К.},
+  title   = {Перемещение при прямолинейном равноускоренном движении},
+  journal = {Квант},
+  year    = {1983},
+  number  = {10},
+  pages   = {32-33},
+  language = {russian},
+}
+
+@Article{Kik_art_2,
+  author  = {Кикоин, А. К.},
+  title   = {О графике прямолинейного равноускоренного движения},
+  journal = {Квант},
+  year    = {1983},
+  number  = {10},
+  pages   = {33-34},
+  language = {russian},
+}
+
+@Article{Martin1969,
+  author   = {Tiersten, Martin S.},
+  journal  = {American Journal of Physics},
+  title    = {Force, {M}omentum {C}hange, and {M}otion},
+  year     = {1969},
+  number   = {1},
+  pages    = {82},
+  volume   = {37},
+  language = {english},
+  url      = {https://www.researchgate.net/publication/234270384_Force_Momentum_Change_and_Motion},
+}
+
+@article{Rutherford1911,
+  author  = {Rutherford, E.},
+  title   = {The Scattering of $\alpha$ and $\beta$ Particles by Matter and the Structure of the Atom},
+  journal = {Philosophical Magazine},
+  series  = {Series 6},
+  volume  = {21},
+  number  = {125},
+  pages   = {669--688},
+  year    = {1911},
+}
+
+@article{Rutherford1914,
+  author  = {Rutherford, E.},
+  title   = {The Structure of the Atom},
+  journal = {Philosophical Magazine},
+  series  = {Series 6},
+  volume  = {27},
+  number  = {159},
+  pages   = {488--498},
+  year    = {1914},
+}
+
+@Article{Silagadze2010,
+  author    = {Silagadze, Z. K.},
+  journal   = {Latin American Journal of Physics Education},
+  title     = {Sliding rope paradox},
+  year      = {2010},
+  number    = {2},
+  pages     = {294-302},
+  volume    = {4},
+  doi       = {10.48550/ARXIV.1002.1586},
+  keywords  = {Classical Physics (physics.class-ph), General Physics (physics.gen-ph), FOS: Physical sciences},
+  language  = {english},
+  url       = {https://arxiv.org/abs/1002.1586},
+}
+
+@Article{bondarov_1,
+  author  = {Бондаров, М. Н.},
+  title   = {Когда помогают графики},
+  journal = {Квант},
+  year    = {2014},
+  number  = {1},
+  pages   = {47-51},
+  language = {russian},
+}
+
+
+% ============================================================
+% 4. ИНТЕРНЕТ-РЕСУРСЫ
+% ============================================================
+
+% ── 4а. Олимпиадные архивы ───────────────────────────────────────────────────
+
+@Misc{4ipho,
+  author   = {4ipho.ru},
+  title    = {Сайт подготовки нац. команд РФ к Межд. ол. по физике IPhO и Межд. естественно-научной ол. юн. IJSO},
+  year     = {2015},
+  keywords = {plan, inet},
+  language = {russian},
+  media    = {eresource},
+  url      = {http://www.4ipho.ru/arhivy-zadach/},
+  urldate  = {2022-04-15},
+}
+
+@Misc{IPHO_unof,
+  title    = {IPhO Problems and Solutions},
+  language = {english},
+  media    = {eresource},
+  url      = {https://physprob.com/},
+  urldate  = {2023-07-30},
+}
+
+@Misc{Olimpiadaru,
+  title    = {Раздел ВсОШ по физике сайта Olimpiada.ru},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://olimpiada.ru/activity/74/tasks},
+  urldate  = {2025-07-13},
+}
+
+@Misc{Olimpiadaru10reg24,
+  title    = {Задание теор. тура рег. этапа ВсОШ по физике 2023-2024 уч.года. Портал Olimpiada.ru},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://tasks.olimpiada.ru/upload/files/tasks/74/2023/tasks-phys-10-teor-reg-23-24.pdf},
+  urldate  = {2025-07-13},
+}
+
+@Misc{Phors10-23wall,
+  title    = {Об стену. Портал pho.rs},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://pho.rs/p/3548},
+  urldate  = {2025-07-13},
+}
+
+@Misc{lpr,
+  author   = {ЛФИ~МФТИ},
+  title    = {Кубок ЛФИ},
+  year     = {2020},
+  keywords = {inet},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://lpr-olimp.ru/},
+  urldate  = {2022-05-05},
+}
+
+@Misc{mosh,
+  title    = {Архив заданий Московской олимпиады школьников по физике},
+  year     = {2020},
+  keywords = {inet},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://mos.olimpiada.ru/tasks/arch_phys},
+  urldate  = {2020-03-14},
+}
+
+@Misc{mosh_aesc,
+  title    = {Архив заданий Московской олимпиады школьников по физике 2017 -- 2026 г.г.},
+  year     = {2026},
+  keywords = {inet},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://internat.msu.ru/olimpiadnye-materialy-po-fizike/},
+  urldate  = {2026-03-28},
+}
+
+@Misc{phors,
+  author   = {Pho.rs},
+  title    = {Архив задач международных олимпиад и квалификационных сборов},
+  year     = {2020},
+  keywords = {plan, inet},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://pho.rs},
+  urldate  = {2022-05-05},
+}
+
+@Misc{vosolimp-25,
+  title    = {Задания и решения теоретического тура заключительного этапа по физике 2025. Портал vos.olimpiada.ru},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://vos.olimpiada.ru/news/6077},
+  urldate  = {2025-07-13},
+}
+
+% ── 4б. Курсы и учебные материалы ────────────────────────────────────────────
+
+@Misc{Akhmedov,
+  author   = {Ахмедов, Э. Т.},
+  title    = {Лекции по специальной теории относительности и классической электродинамике.},
+  keywords = {add},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://mipt.ru/upload/medialibrary/37f/lecturesto.pdf},
+  urldate  = {2022-04-20},
+}
+
+@Misc{ButikovKepler,
+  author   = {Бутиков, Е. И.},
+  title    = {Закономерности Кеплеровых движений: учебн. пособие.},
+  language = {russian},
+  media    = {eresource},
+  url      = {http://butikov.faculty.ifmo.ru/Lectures/Background.pdf},
+  urldate  = {2024-10-16},
+}
+
+@Misc{Kalda,
+  author   = {Kalda, Jaan},
+  title    = {Study guides for IPhO-s},
+  year     = {2012},
+  keywords = {inet},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://www.ioc.ee/~kalda/ipho/},
+  urldate  = {2020-03-14},
+}
+
+@MISC{McDonald,
+  author   = {McDonald, Kirk T.},
+  title    = {Small Oscillations of a Mass That Slides inside a Cylinder Which Rotates about a Horizontal Axis},
+  year     = 2011,
+  url      = {http://www.hep.princeton.edu/~mcdonald/examples/sliding.pdf},
+  urldate  = {2020-02-14},
+  media    = {eresource},
+  language = {russian},
+}
+
+@Misc{Morin_modes,
+  author   = {Morin, David},
+  title    = {Normal modes},
+  language = {english},
+  media    = {eresource},
+  url      = {https://scholar.harvard.edu/files/david-morin/files/waves_normalmodes.pdf},
+  urldate  = {2023-07-30},
+}
+
+@Misc{RelQuestion,
+  author   = {Гаврилов, С.},
+  title    = {Вопросы и ответы по специальной теории относительности.},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://ru.scribd.com/document/457306308},
+  urldate  = {2022-04-20},
+}
+
+@Misc{Yakovlev,
+  author   = {Яковлев, И. В.},
+  title    = {mathus.ru},
+  year     = {2012},
+  keywords = {inet},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://mathus.ru/phys/},
+  urldate  = {2020-02-14},
+}
+
+@Misc{phd4mipt,
+  title    = {Отделение физики},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://phd.4mipt.ru/},
+  urldate  = {2026-03-10},
+}
+
+% ── 4в. Прочие интернет-ресурсы ──────────────────────────────────────────────
+
+@Misc{InfiniteGrid,
+  title    = {The Algebra of an Infinite Grid of Resistors},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://www.mathpages.com/home/kmath669/kmath669.htm},
+  urldate  = {2020-04-14},
+}
+
+@Misc{Navier,
+  title    = {Navier–Stokes equations},
+  language = {russian},
+  media    = {eresource},
+  url      = {https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations},
+  urldate  = {2022-07-20},
+}
+
+@Misc{PhyCup21,
+  title    = {Physics Cup - TalTech 2021 – Problem 2},
+  language = {english},
+  media    = {eresource},
+  url      = {https://physicscup.ee/physics-cup-taltech-2021-problem-2/},
+  urldate  = {2024-10-16},
+}
+
+
+% ============================================================
+% 5. СЛУЖЕБНАЯ ЗАПИСЬ
+% ============================================================
+
+@Comment{jabref-meta: databaseType:bibtex;}
