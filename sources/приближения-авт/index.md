@@ -1,4 +1,4 @@
----
+﻿---
 type: source
 title: Приближённые вычисления (авторские разработки)
 author: AESC
@@ -39,7 +39,7 @@ status: ожидает-сводки
 $$ \delta f = \frac{|f-f_a|}{f}, \quad \Delta f = |f-f_a| $$
 $$ \Delta(x \pm y) = \Delta x + \Delta y $$
 $$ \delta(xy) \approx \delta x + \delta y, \quad \delta\left(\frac{x}{y}\right) \approx \delta x + \delta y, \quad \delta(x^n) \approx |n|\delta x $$
-$$ \sin\alpha \approx \alpha, \quad \tan\alpha \approx \alpha, \quad \cos\alpha \approx 1 $$
+$$ \sin\alpha \approx \alpha, \quad \operatorname{tg}\alpha \approx \alpha, \quad \cos\alpha \approx 1 $$
 $$ \frac{1}{1+x} \approx 1-x, \quad \sqrt{1+x} \approx 1+\frac{x}{2}, \quad (1+x)^2 \approx 1+2x $$
 $$ \cos x \approx 1-\frac{x^2}{2} \quad (\text{квадратичное приближение}) $$
 $$ \frac{1}{1+x} \approx 1-x+x^2 \quad (\text{с учётом остатка от деления}) $$

@@ -1,4 +1,4 @@
----
+﻿---
 title: Гельфанд, Львовский, Тоом — Тригонометрия
 status: ожидает сводки от Qwen
 ---
@@ -12,16 +12,16 @@ status: ожидает сводки от Qwen
 
 ### § 1–4. Первое знакомство с тригонометрией (с. 5–18)
 - с. 6–9: Геометрическое определение синуса, тангенса и косинуса через прямоугольный треугольник. Введение радианной меры угла.
-- с. 15–18: Приближения для малых углов. Неравенство $\sin \alpha < \alpha$, $\tan \alpha > \alpha$. Вывод $\cos \alpha \approx 1 - \alpha^2/2$.
+- с. 15–18: Приближения для малых углов. Неравенство $\sin \alpha < \alpha$, $\operatorname{tg} \alpha > \alpha$. Вывод $\cos \alpha \approx 1 - \alpha^2/2$.
 - **Ключевые формулы**: 
-  $$\sin\alpha = \frac{BC}{AB}, \quad \cos\alpha = \frac{AC}{AB}, \quad \tan\alpha = \frac{BC}{AC}$$
+  $$\sin\alpha = \frac{BC}{AB}, \quad \cos\alpha = \frac{AC}{AB}, \quad \operatorname{tg}\alpha = \frac{BC}{AC}$$
   $$\alpha_{\text{рад}} = \frac{\text{длина дуги}}{R}$$
 
 ### § 5–6. Определение тригонометрических функций (с. 19–30)
-- с. 24–27: Переход от острых углов к произвольным числам с помощью «тригонометрических часов» и единичной окружности. Определение $\sin t, \cos t, \tan t, \cot t$ как координат точки на окружности.
+- с. 24–27: Переход от острых углов к произвольным числам с помощью «тригонометрических часов» и единичной окружности. Определение $\sin t, \cos t, \operatorname{tg} t, \operatorname{ctg} t$ как координат точки на окружности.
 - с. 29–30: Ось тангенсов и геометрическая интерпретация знака функций.
 - **Ключевые формулы**:
-  $$\sin^2 t + \cos^2 t = 1, \quad \tan t = \frac{\sin t}{\cos t}$$
+  $$\sin^2 t + \cos^2 t = 1, \quad \operatorname{tg} t = \frac{\sin t}{\cos t}$$
 
 ### § 7–9. Простейшие свойства и формулы приведения (с. 31–42)
 - с. 32–36: Вывод основного тождества из уравнения окружности. Периодичность $2\pi$ (для синуса/косинуса) и $\pi$ (для тангенса/котангенса).
@@ -35,7 +35,7 @@ status: ожидает сводки от Qwen
 - **Ключевые формулы**:
   $$\cos(\alpha - \beta) = \cos\alpha\cos\beta + \sin\alpha\sin\beta$$
   $$\sin(\alpha \pm \beta) = \sin\alpha\cos\beta \pm \cos\alpha\sin\beta$$
-  $$\tan(\alpha \pm \beta) = \frac{\tan\alpha \pm \tan\beta}{1 \mp \tan\alpha\tan\beta}$$
+  $$\operatorname{tg}(\alpha \pm \beta) = \frac{\operatorname{tg}\alpha \pm \operatorname{tg}\beta}{1 \mp \operatorname{tg}\alpha\operatorname{tg}\beta}$$
 
 ### § 20–22. Формулы вспомогательного угла, кратных углов, преобразования (с. 102–122)
 - с. 102–107: Формула вспомогательного угла $P\sin\alpha + Q\cos\alpha = \sqrt{P^2+Q^2}\sin(\alpha+\varphi)$.
@@ -48,10 +48,10 @@ status: ожидает сводки от Qwen
 
 ### § 23. Производные тригонометрических функций (с. 123–132)
 - с. 127–130: Вычисление производных $\sin x$ и $\cos x$ через пределы и геометрическую интерпретацию касательных.
-- с. 130–132: Производные $\tan x$, $\cot x$ и обратных функций ($\arcsin x$, $\arccos x$, $\arctan x$).
+- с. 130–132: Производные $\operatorname{tg} x$, $\operatorname{ctg} x$ и обратных функций ($\arcsin x$, $\arccos x$, $\operatorname{arctg} x$).
 - **Ключевые формулы**:
-  $$\frac{d}{dx}\sin x = \cos x, \quad \frac{d}{dx}\cos x = -\sin x, \quad \frac{d}{dx}\tan x = \frac{1}{\cos^2 x}$$
-  $$\frac{d}{dx}\arcsin x = \frac{1}{\sqrt{1-x^2}}, \quad \frac{d}{dx}\arctan x = \frac{1}{1+x^2}$$
+  $$\frac{d}{dx}\sin x = \cos x, \quad \frac{d}{dx}\cos x = -\sin x, \quad \frac{d}{dx}\operatorname{tg} x = \frac{1}{\cos^2 x}$$
+  $$\frac{d}{dx}\arcsin x = \frac{1}{\sqrt{1-x^2}}, \quad \frac{d}{dx}\operatorname{arctg} x = \frac{1}{1+x^2}$$
 
 ### § 28–30. Комплексные числа и формула Эйлера (с. 164–184)
 - с. 169–175: Модуль и аргумент. Тригонометрическая форма $z = r(\cos\varphi + i\sin\varphi)$. Формула Муавра.
@@ -65,12 +65,12 @@ status: ожидает сводки от Qwen
 ### Определения
 - **Синус, косинус острого угла**: отношения катетов к гипотенузе в прямоугольном треугольнике (с. 6, 11).
 - **Общее определение (единичная окружность)**: $\sin t$ и $\cos t$ — ордината и абсцисса точки, соответствующей числу $t$ на тригонометрическом круге (с. 27).
-- **Тангенс/Котангенс**: $\tan t = \sin t/\cos t$ (ордината точки пересечения луча с осью тангенсов), $\cot t = \cos t/\sin t$ (с. 27, 29).
+- **Тангенс/Котангенс**: $\operatorname{tg} t = \sin t/\cos t$ (ордината точки пересечения луча с осью тангенсов), $\operatorname{ctg} t = \cos t/\sin t$ (с. 27, 29).
 
 ### Формулы суммы и разности
 $$\sin(\alpha \pm \beta) = \sin\alpha\cos\beta \pm \cos\alpha\sin\beta$$
 $$\cos(\alpha \pm \beta) = \cos\alpha\cos\beta \mp \sin\alpha\sin\beta$$
-$$\tan(\alpha \pm \beta) = \frac{\tan\alpha \pm \tan\beta}{1 \mp \tan\alpha\tan\beta}$$
+$$\operatorname{tg}(\alpha \pm \beta) = \frac{\operatorname{tg}\alpha \pm \operatorname{tg}\beta}{1 \mp \operatorname{tg}\alpha\operatorname{tg}\beta}$$
 
 ### Формулы произведения и суммы
 $$\sin\alpha\cos\beta = \frac{1}{2}\left[\sin(\alpha+\beta) + \sin(\alpha-\beta)\right]$$
@@ -84,8 +84,8 @@ $$\cos 2\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha$$
 $$\sin 3\alpha = 3\sin\alpha - 4\sin^3\alpha, \quad \cos 3\alpha = 4\cos^3\alpha - 3\cos\alpha$$
 
 ### Обратные функции
-- $\arcsin a \in [-\pi/2, \pi/2]$, $\arccos a \in [0, \pi]$, $\arctan a \in (-\pi/2, \pi/2)$ (с. 45, 48, 50).
-- Свойства: $\arcsin(-x) = -\arcsin x$, $\arccos(-x) = \pi - \arccos x$, $\arctan x + \operatorname{arccot} x = \pi/2$ (с. 52).
+- $\arcsin a \in [-\pi/2, \pi/2]$, $\arccos a \in [0, \pi]$, $\operatorname{arctg} a \in (-\pi/2, \pi/2)$ (с. 45, 48, 50).
+- Свойства: $\arcsin(-x) = -\arcsin x$, $\arccos(-x) = \pi - \arccos x$, $\operatorname{arctg} x + \operatorname{arcctg} x = \pi/2$ (с. 52).
 
 ## Примеры и решённые задачи
 - с. 67: **Теорема косинусов** — вывод через опускание высоты и теорему Пифагора. Геометрическая интерпретация связи сторон и угла.
@@ -98,7 +98,7 @@ $$\sin 3\alpha = 3\sin\alpha - 4\sin^3\alpha, \quad \cos 3\alpha = 4\cos^3\alpha
 ## Соответствие главам базы знаний
 - **00а (Математика: основы)** — вся книга является справочным ядром. Особенно важны:
   - Геометрические определения через единичную окружность (с. 24–27)
-  - Малые углы: $\sin x \approx x$, $\tan x \approx x$, $\cos x \approx 1 - x^2/2$ (с. 15–18, 109–110) — критичны для линеаризации уравнений движения
+  - Малые углы: $\sin x \approx x$, $\operatorname{tg} x \approx x$, $\cos x \approx 1 - x^2/2$ (с. 15–18, 109–110) — критичны для линеаризации уравнений движения
   - Производные тригонометрических функций (с. 123–132) — база для дифференцирования кинематических величин
   - Векторный аппарат и скалярное произведение (с. 79–97) — подготовка к работе с векторами скорости/ускорения
 - **00в (Дифгеометрия кривых, комплексные числа)** — связь тригонометрии с комплексной плоскостью (с. 169–175), формула Эйлера (с. 181), параметрическое задание окружности.
