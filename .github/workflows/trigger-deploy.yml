@@ -1,0 +1,21 @@
+name: Trigger site deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch deploy event to kinematics-site
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.DEPLOY_TOKEN }}
+          script: |
+            await github.rest.repos.createDispatchEvent({
+              owner: 'PhysicsPlus',
+              repo: 'kinematics-site',
+              event_type: 'content-updated',
+            })
