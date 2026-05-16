@@ -10,7 +10,11 @@
       "Bash(git push *)",
       "Bash(git status *)",
       "Bash(git log *)",
-      "Bash(cd \"H:\\AESC\\kinematics-wiki\" && git *)"
+      "Bash(git remote *)",
+      "Bash(git rm *)",
+      "Bash(git init*)",
+      "Bash(git branch *)",
+      "Bash(cd \"H:\\AESC\\kinematics-wiki\"*)"
     ]
   }
 }
