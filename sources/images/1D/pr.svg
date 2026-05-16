@@ -1,0 +1,141 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 319.62 158.46">
+  <defs>
+    <style>
+      .cls-1, .cls-6, .cls-7, .cls-8 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #666;
+        stroke-miterlimit: 10;
+        stroke-width: 0.4px;
+      }
+
+      .cls-2 {
+        font-size: 9px;
+        letter-spacing: -0.03em;
+      }
+
+      .cls-2, .cls-4 {
+        font-family: TeXGyrePagella-Regular, TeX Gyre Pagella;
+      }
+
+      .cls-3 {
+        font-size: 10px;
+        font-family: TeXGyrePagella-Italic, TeX Gyre Pagella;
+        font-style: italic;
+        letter-spacing: -0.03em;
+      }
+
+      .cls-4, .cls-5 {
+        font-style: normal;
+      }
+
+      .cls-5 {
+        font-family: STIXTwoText-Regular, STIX Two Text;
+        letter-spacing: -0.05em;
+      }
+
+      .cls-6, .cls-9 {
+        stroke: #000;
+      }
+
+      .cls-6, .cls-7, .cls-8, .cls-9 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-6 {
+        stroke-width: 0.6px;
+      }
+
+      .cls-7 {
+        stroke: #4b5984;
+        stroke-width: 1.5px;
+      }
+
+      .cls-8 {
+        stroke: #d64339;
+      }
+
+      .cls-9 {
+        fill: #fff;
+        stroke-width: 0.5px;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="cls-1" x="34.49" y="1.13" width="283.46" height="141.73"/>
+    <line class="cls-1" x1="34.49" y1="128.69" x2="317.95" y2="128.69"/>
+    <line class="cls-1" x1="34.49" y1="114.52" x2="317.95" y2="114.52"/>
+    <line class="cls-1" x1="34.49" y1="100.34" x2="317.95" y2="100.34"/>
+    <line class="cls-1" x1="34.49" y1="86.17" x2="317.95" y2="86.17"/>
+    <line class="cls-1" x1="34.49" y1="72" x2="317.95" y2="72"/>
+    <line class="cls-1" x1="34.49" y1="57.82" x2="317.95" y2="57.82"/>
+    <line class="cls-1" x1="34.49" y1="43.65" x2="317.95" y2="43.65"/>
+    <line class="cls-1" x1="34.49" y1="29.48" x2="317.95" y2="29.48"/>
+    <line class="cls-1" x1="34.49" y1="15.3" x2="317.95" y2="15.3"/>
+    <line class="cls-1" x1="34.49" y1="1.13" x2="317.95" y2="1.13"/>
+    <line class="cls-1" x1="303.78" y1="1.13" x2="303.78" y2="142.86"/>
+    <line class="cls-1" x1="289.61" y1="1.13" x2="289.61" y2="142.86"/>
+    <line class="cls-1" x1="275.43" y1="1.13" x2="275.43" y2="142.86"/>
+    <line class="cls-1" x1="261.26" y1="1.13" x2="261.26" y2="142.86"/>
+    <line class="cls-1" x1="247.09" y1="1.13" x2="247.09" y2="142.86"/>
+    <line class="cls-1" x1="232.91" y1="1.13" x2="232.91" y2="142.86"/>
+    <line class="cls-1" x1="218.74" y1="1.13" x2="218.74" y2="142.86"/>
+    <line class="cls-1" x1="204.57" y1="1.13" x2="204.57" y2="142.86"/>
+    <line class="cls-1" x1="190.39" y1="1.13" x2="190.39" y2="142.86"/>
+    <line class="cls-1" x1="176.22" y1="1.13" x2="176.22" y2="142.86"/>
+    <line class="cls-1" x1="162.05" y1="1.13" x2="162.05" y2="142.86"/>
+    <line class="cls-1" x1="147.87" y1="1.13" x2="147.87" y2="142.86"/>
+    <line class="cls-1" x1="133.7" y1="1.13" x2="133.7" y2="142.86"/>
+    <line class="cls-1" x1="119.53" y1="1.13" x2="119.53" y2="142.86"/>
+    <line class="cls-1" x1="105.35" y1="1.13" x2="105.35" y2="142.86"/>
+    <line class="cls-1" x1="91.18" y1="1.13" x2="91.18" y2="142.86"/>
+    <line class="cls-1" x1="77.01" y1="1.13" x2="77.01" y2="142.86"/>
+    <line class="cls-1" x1="62.83" y1="1.13" x2="62.83" y2="142.86"/>
+    <line class="cls-1" x1="48.66" y1="1.13" x2="48.66" y2="142.86"/>
+  </g>
+  <text class="cls-2" transform="translate(18.02 59.86)">3,0</text>
+  <text class="cls-2" transform="translate(18.02 31.51)">4,0</text>
+  <text class="cls-2" transform="translate(18.02 88.2)">2,0</text>
+  <text class="cls-2" transform="translate(18.02 116.55)">1,0</text>
+  <text class="cls-2" transform="translate(18.02 144.9)">0,0</text>
+  <text class="cls-3" transform="translate(3.36 8.46)">x<tspan class="cls-4" x="4.75" y="0">(</tspan><tspan x="7.83" y="0">t</tspan><tspan class="cls-4" x="10.91" y="0">), </tspan><tspan class="cls-5" x="18.49" y="0">м</tspan></text>
+  <g>
+    <rect class="cls-6" x="34.49" y="1.13" width="283.46" height="141.73"/>
+    <line class="cls-6" x1="34.49" y1="114.52" x2="317.95" y2="114.52"/>
+    <line class="cls-6" x1="34.49" y1="86.17" x2="317.95" y2="86.17"/>
+    <line class="cls-6" x1="34.49" y1="57.82" x2="317.95" y2="57.82"/>
+    <line class="cls-6" x1="34.49" y1="29.48" x2="317.95" y2="29.48"/>
+    <line class="cls-6" x1="34.49" y1="1.13" x2="317.95" y2="1.13"/>
+    <line class="cls-6" x1="289.61" y1="1.13" x2="289.61" y2="142.86"/>
+    <line class="cls-6" x1="261.26" y1="1.13" x2="261.26" y2="142.86"/>
+    <line class="cls-6" x1="232.91" y1="1.13" x2="232.91" y2="142.86"/>
+    <line class="cls-6" x1="204.57" y1="1.13" x2="204.57" y2="142.86"/>
+    <line class="cls-6" x1="176.22" y1="1.13" x2="176.22" y2="142.86"/>
+    <line class="cls-6" x1="147.87" y1="1.13" x2="147.87" y2="142.86"/>
+    <line class="cls-6" x1="119.53" y1="1.13" x2="119.53" y2="142.86"/>
+    <line class="cls-6" x1="91.18" y1="1.13" x2="91.18" y2="142.86"/>
+    <line class="cls-6" x1="62.83" y1="1.13" x2="62.83" y2="142.86"/>
+  </g>
+  <polyline class="cls-7" points="45.83 23.81 48.69 50.73 51.49 68.21 54.35 80.29 57.21 89.03 60.02 95.48 62.88 100.37 65.69 104.11 68.55 106.98 71.35 109.17 74.21 110.89 77.02 112.16 79.88 113.14 82.68 113.77 85.54 114.23 88.35 114.46 91.21 114.52 94.01 114.46 96.88 114.29 99.68 114 102.54 113.59 105.35 113.14 108.21 112.56 111.07 111.98 113.87 111.29 116.73 110.6 119.54 109.8 122.4 108.99 125.2 108.13 128.06 107.27 130.87 106.35 133.73 105.43 136.53 104.45 139.4 103.47 142.2 102.44 145.06 101.4 147.87 100.37 150.73 99.27 153.53 98.18 156.39 97.09 159.2 95.99 162.06 94.84 164.92 93.69 167.72 92.54 170.59 91.39 173.39 90.19 176.25 89.03 179.06 87.83 181.92 86.62 184.72 85.41 187.58 84.2 190.39 82.94 193.25 81.73 196.05 80.46 198.91 79.26 201.72 77.99 204.58 76.72 207.39 75.46 210.25 74.19 213.11 72.93 215.91 71.66 218.77 70.34 221.58 69.08 224.44 67.81 227.24 66.49 230.1 65.22 232.91 63.9 235.77 62.58 238.58 61.31 241.44 59.99 244.24 58.66 247.1 57.34 249.91 56.02 252.77 54.7 255.57 53.37 258.43 52.05 261.24 50.73 264.1 49.4 266.96 48.08 269.77 46.7 272.63 45.38 275.43 44.05 278.29 42.73 281.1 41.35 283.96 40.03 286.76 38.7 289.62 37.32 292.43 36 295.29 34.62 298.09 33.3 300.95 31.92 303.76 30.59 306.62 29.21 309.43 27.89 312.29 26.51 315.09 25.13 317.95 23.81"/>
+  <line class="cls-8" x1="317.95" y1="23.81" x2="261.26" y2="51.02"/>
+  <line class="cls-8" x1="34.49" y1="57.82" x2="91.18" y2="142.86"/>
+  <line class="cls-8" x1="204.57" y1="79.08" x2="91.18" y2="121.6"/>
+  <circle class="cls-9" cx="317.95" cy="23.81" r="1.42"/>
+  <circle class="cls-9" cx="147.87" cy="100.34" r="1.42"/>
+  <circle class="cls-9" cx="62.83" cy="100.34" r="1.42"/>
+  <circle class="cls-9" cx="91.18" cy="114.52" r="1.42"/>
+  <text class="cls-2" transform="translate(85.78 153.93)">1,0</text>
+  <text class="cls-2" transform="translate(142.47 153.93)">2,0</text>
+  <text class="cls-2" transform="translate(199.17 153.93)">3,0</text>
+  <text class="cls-2" transform="translate(255.86 153.93)">4,0</text>
+  <text class="cls-3" transform="translate(305.91 154.73)">t<tspan class="cls-4" x="3.08" y="0">, </tspan><tspan class="cls-5" x="7.58" y="0">c</tspan></text>
+  <text class="cls-3" transform="translate(65.67 95.84)">A</text>
+  <text class="cls-3" transform="translate(93.67 109.84)">B</text>
+  <text class="cls-3" transform="translate(138.02 95.84)">C</text>
+  <text class="cls-3" transform="translate(305.91 20.84)">D</text>
+  <circle class="cls-9" cx="91.18" cy="142.86" r="1.42"/>
+  <circle class="cls-9" cx="34.49" cy="57.82" r="1.42"/>
+</svg>
