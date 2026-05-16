@@ -1,0 +1,343 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{chap}[2026/05/09 Kinematics Book Style (LuaLaTeX)]
+
+% -----------------------------------------------------------------------
+% 1. ПРОВЕРКА ДВИЖКА
+% -----------------------------------------------------------------------
+\RequirePackage{iftex}
+\ifLuaTeX\else
+  \PackageError{chap}{Для компиляции требуется LuaLaTeX}{}
+\fi
+
+% -----------------------------------------------------------------------
+% 2. ГЕОМЕТРИЯ — B5, двусторонняя вёрстка
+% Классические пропорции: top < bottom, inner < outer
+% -----------------------------------------------------------------------
+\RequirePackage[
+  includeheadfoot,
+  paperwidth=176mm, paperheight=250mm,
+  top=18mm, bottom=26mm,
+  inner=18mm, outer=24mm,
+  marginparwidth=0.6cm, marginparsep=1.2mm,
+  headheight=.5cm, footskip=0.9cm, headsep=0.4cm,
+  heightrounded,
+  twoside
+]{geometry}
+
+\linespread{1.02}
+\setlength{\parindent}{8pt}
+
+% -----------------------------------------------------------------------
+% 3. ЯЗЫКИ
+% -----------------------------------------------------------------------
+\RequirePackage[english, russian]{babel}
+\RequirePackage[nosingleletter]{impnattypo}
+
+% -----------------------------------------------------------------------
+% 4. ШРИФТЫ
+% -----------------------------------------------------------------------
+\RequirePackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX, Renderer=Harfbuzz}
+
+% Основной шрифт — STIX Two Text
+\setmainfont{STIX Two Text}[
+  SmallCapsFont={STIX Two Text},
+  SmallCapsFeatures={Scale=1.12}
+]
+\setsansfont{STIX Two Text}
+\setmonofont{Anonymous Pro}
+
+% Гротеск для заголовков — Inter
+\newfontfamily\headingfont{Inter}[
+  UprightFont    = *-Regular,
+  BoldFont       = *-SemiBold,
+  ItalicFont     = *-Italic,
+  BoldItalicFont = *-SemiBoldItalic,
+  Ligatures      = TeX,
+  Renderer       = Harfbuzz
+]
+\newfontfamily\headinglight{Inter}[
+  UprightFont = *-Light,
+  Ligatures   = TeX,
+  Renderer    = Harfbuzz
+]
+\newfontfamily\headingmedium{Inter}[
+  UprightFont = *-Medium,
+  Ligatures   = TeX,
+  Renderer    = Harfbuzz
+]
+
+% -----------------------------------------------------------------------
+% 5. МАТЕМАТИКА
+% -----------------------------------------------------------------------
+\RequirePackage{unicode-math}
+\unimathsetup{math-style=TeX, bold-style=TeX}
+\setmathfont{texgyrepagella-math.otf}
+
+% -----------------------------------------------------------------------
+% 6. МИКРОТИПОГРАФИКА
+% -----------------------------------------------------------------------
+\RequirePackage[
+  protrusion = true,  % Выступы знаков препинания за границу поля (улучшает ровность края)
+  expansion  = true,  % Растяжение/сжатие символов для лучшего заполнения строк
+  tracking   = true,  % Межбуквенное расстояние (трекинг)
+  shrink     = 30     % Максимальное сжатие межсловных пробелов (в единицах 1/1000 em)
+]{microtype}
+
+% -----------------------------------------------------------------------
+% 7. ЦВЕТА
+% -----------------------------------------------------------------------
+\RequirePackage{xcolor}
+\definecolor{indigo}{HTML}{120A8F}
+\definecolor{darkred}{HTML}{8B0000}
+\definecolor{violet}{HTML}{800080}
+\definecolor{chaptergray}{gray}{0.55}
+\definecolor{examplegray}{gray}{0.50}
+
+% -----------------------------------------------------------------------
+% 8. ЗАГОЛОВКИ — titlesec
+% -----------------------------------------------------------------------
+\RequirePackage{titlesec}
+
+% \chapter — номер Inter Light 48pt серый, название Inter Regular 18pt
+\titleformat{\chapter}[display]
+  {\headingfont}
+  {{\headinglight\fontsize{48}{52}\selectfont\color{chaptergray}\thechapter}}
+  {8pt}
+  {\fontsize{18}{22}\selectfont}
+\titlespacing*{\chapter}
+  {0pt}{60pt plus 6pt minus 4pt}{28pt plus 4pt minus 2pt}
+
+% \chapter* — ненумерованная глава
+\titleformat{name=\chapter,numberless}[block]
+  {\headingfont\fontsize{18}{22}\selectfont}
+  {}
+  {0pt}
+  {}
+\titlespacing*{name=\chapter,numberless}
+  {0pt}{60pt plus 6pt minus 4pt}{28pt plus 4pt minus 2pt}
+
+% \section — § N.  Название  (Inter Medium, 14pt, влево)
+\titleformat{\section}[block]
+  {\headingmedium\fontsize{14}{18}\selectfont}
+  {\S\,\thesection.}
+  {0.6em}
+  {}
+\titlespacing*{\section}
+  {0pt}{1.2\baselineskip plus 0.3\baselineskip minus 0.2\baselineskip}
+       {0.4\baselineskip plus 0.1\baselineskip}
+
+% \section* — ненумерованный параграф
+\titleformat{name=\section,numberless}[block]
+  {\headingmedium\fontsize{14}{18}\selectfont}
+  {}
+  {0pt}
+  {}
+\titlespacing*{name=\section,numberless}
+  {0pt}{1.2\baselineskip plus 0.3\baselineskip minus 0.2\baselineskip}
+       {0.4\baselineskip plus 0.1\baselineskip}
+
+% \subsection — Inter Medium, 12pt, влево
+\titleformat{\subsection}[block]
+  {\headingmedium\fontsize{12}{15}\selectfont}
+  {\thesubsection.}
+  {0.5em}
+  {}
+\titlespacing*{\subsection}
+  {0pt}{0.8\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip}
+       {0.25\baselineskip plus 0.1\baselineskip}
+
+% Сквозная нумерация section, subsection без номера chapter
+\counterwithout{section}{chapter}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+
+% -----------------------------------------------------------------------
+% 9. КОЛОНТИТУЛЫ — только верхние, чётная/нечётная схема
+% чётная  (левая):  название параграфа — номер страницы
+% нечётная (правая): номер страницы — название параграфа
+% -----------------------------------------------------------------------
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[LE]{\small\headingfont\nouppercase{\rightmark}}
+\fancyhead[RE]{\small\headingfont\thepage}
+\fancyhead[LO]{\small\headingfont\thepage}
+\fancyhead[RO]{\small\headingfont\nouppercase{\rightmark}}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Страница начала главы — номер внизу по центру, без верхней линии
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  }
+
+\renewcommand{\mainmatter}{%
+  \@mainmattertrue%
+  \setcounter{secnumdepth}{3}%
+}
+% -----------------------------------------------------------------------
+% 10. ГИПЕРССЫЛКИ
+% -----------------------------------------------------------------------
+\RequirePackage[unicode]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=indigo,
+  citecolor=darkred,
+  urlcolor=violet
+}
+
+% -----------------------------------------------------------------------
+% 11. ГРАФИКА
+% -----------------------------------------------------------------------
+\RequirePackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.eps,.png,.jpg}
+\setlength{\abovecaptionskip}{0.2\baselineskip}
+\setlength{\textfloatsep}{0.6\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}
+\setlength{\intextsep}{0.6\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}
+\setlength{\floatsep}{0.6\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}
+
+\RequirePackage{caption}
+\captionsetup{
+  font={small, it},
+  labelfont={small, it}
+}
+% -----------------------------------------------------------------------
+% 12. СРЕДЫ — tcolorbox с вертикальной линией слева
+%   definition  — indigo,   1.5pt
+%   theorem     — darkred,  1pt, курсив
+%   example     — без выделения, только метка капителью
+%   proof       — без выделения, капитель + отступ
+% -----------------------------------------------------------------------
+\RequirePackage[skins, breakable]{tcolorbox}
+
+\newcounter{defcounter}[chapter]
+\newcounter{thmcounter}[chapter]
+\newcounter{excounter}[chapter]
+
+\tcbset{
+  envstyle/.style={
+    blanker,
+    breakable,
+    left=8pt,
+    top=3pt,
+    bottom=3pt,
+    before upper={\setlength{\parindent}{0pt}},
+    parbox=false,
+  }
+}
+
+% Определение — indigo, 1.5pt
+\newenvironment{definition}{%
+  \refstepcounter{defcounter}%
+  \begin{tcolorbox}[
+    envstyle,
+    borderline west={1.5pt}{0pt}{indigo},
+    before skip=0.5\baselineskip,
+    after skip=0.3\baselineskip,
+  ]%
+  {\scshape Определение \thedefcounter.}\ \normalfont\ignorespaces
+}{%
+  \end{tcolorbox}%
+}
+
+% Теорема — darkred, 1pt, курсив
+\newenvironment{theorem}{%
+  \refstepcounter{thmcounter}%
+  \begin{tcolorbox}[
+    envstyle,
+    borderline west={1pt}{0pt}{darkred},
+    before skip=0.5\baselineskip,
+    after skip=0.3\baselineskip,
+  ]%
+  {\scshape Теорема \thethmcounter.}\ \itshape\ignorespaces
+}{%
+  \end{tcolorbox}%
+}
+
+% Пример — без выделения
+\newenvironment{example}{%
+  \par\vspace{0.4\baselineskip}%
+  \noindent\refstepcounter{excounter}%
+  {\scshape Пример \theexcounter.}\ \normalfont\ignorespaces
+}{%
+  \par\vspace{0.3\baselineskip}%
+}
+
+% Доказательство — без выделения
+\newenvironment{proof}{%
+  \par\vspace{0.3\baselineskip}%
+  \noindent{\scshape Доказательство.}\ \normalfont\ignorespaces
+}{%
+  \hfill\textit{ч.т.д.}\par\vspace{0.2\baselineskip}%
+}
+
+% -----------------------------------------------------------------------
+% 13. ОТСТУПЫ ВОКРУГ ФОРМУЛ
+% -----------------------------------------------------------------------
+\setlength{\abovedisplayskip}{0.5\baselineskip}
+\setlength{\belowdisplayskip}{0.5\baselineskip}
+\setlength{\abovedisplayshortskip}{0.2\baselineskip}
+\setlength{\belowdisplayshortskip}{0.4\baselineskip}
+
+% -----------------------------------------------------------------------
+% 14. ВСПОМОГАТЕЛЬНЫЕ ПАКЕТЫ И КОМАНДЫ
+% -----------------------------------------------------------------------
+\RequirePackage{changepage}
+\RequirePackage{enumitem}
+
+% Перенос в inline-формулах
+\newcommand*{\hm}[1]{%
+  #1\nobreak%
+  \discretionary{}%
+  {\hbox{$\mathsurround=0pt #1$}}%
+  {}%
+}
+
+%% Блоки с иконками (bclogo)
+%\RequirePackage[tikz]{bclogo}
+%\RequirePackage{etoolbox}
+%\makeatletter
+%\patchcmd{\bclogo}{\medskip}{}{}{}
+%\makeatother
+%\BeforeBeginEnvironment{bclogo}{\par\vspace{-0.8\baselineskip}}
+%\AfterEndEnvironment{bclogo}{\vspace{-0.8\baselineskip}\par}
+%\setlength{\logowidth}{10pt}
+%\renewcommand\bcStyleTitre[1]{\hskip1.6mm\emph{#1}}
+
+% Буквенная нумерация для списков (а, б, в...)
+\AtBeginDocument{%
+  \AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}%
+}
+
+% -----------------------------------------------------------------------
+% 15. SUBFILES — компиляция отдельных глав
+% -----------------------------------------------------------------------
+\RequirePackage{subfiles}
+\newcommand{\onlyinsubfile}[1]{\relax}
+\AtBeginDocument{%
+  \@ifclassloaded{subfiles}{\renewcommand{\onlyinsubfile}[1]{#1}}{}%
+}
+
+% -----------------------------------------------------------------------
+% 16. ВИСЯЧИЕ СТРОКИ
+% -----------------------------------------------------------------------
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+% -----------------------------------------------------------------------
+% 18. МАТЕМАТИЧЕСКИЕ ОБОЗНАЧЕНИЯ
+% -----------------------------------------------------------------------
+\RequirePackage{physics}
+
+% Направленные отрезки — стрелка сверху (esvect, стиль f)
+\RequirePackage[f]{esvect}
+
+% Координаты вектора столбцом
+\newcommand{\colvec}[3]{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
+\newcommand{\colvecii}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+
+\endinput
