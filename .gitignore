@@ -28,6 +28,9 @@ sources/*.pdf
 # Сводки-index.md хранятся в git, сами PDF — только локально
 sources/**/*.pdf
 
+# LaTeX-сборка книги (генерируется по запросу, не хранится в git)
+latex/
+
 # Системные файлы Windows
 Thumbs.db
 desktop.ini
