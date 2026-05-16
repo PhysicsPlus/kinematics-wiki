@@ -106,6 +106,7 @@ $$OXY, \quad OXYZ, \quad S, \quad S', \quad \{\hat{\mathbf{e}}_x, \hat{\mathbf{e
 | Производная по времени | точка сверху | `\dot{x}`, `\ddot{x}` |
 | Дифференциал | прямой d | `\mathrm{d}t` |
 | Конечная разность | $\Delta$ | `\Delta x` |
+| Интеграл с пределами | `\limits` обязательно | `\int\limits_a^b f\,\mathrm{d}t` |
 
 ---
 
