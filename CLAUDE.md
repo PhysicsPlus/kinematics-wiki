@@ -112,8 +112,9 @@ $\frac{n(n-1)}{2}x^2$
 ### Векторы и специальные обозначения
 
 - Пакеты: `physics` и `unicode-math`.
-- Векторы: `\vec{v}` или `\vb{v}` (physics-пакет).
-- Орты: `\hat{e}` или `\vu{e}`.
+- Векторы **латинскими** буквами: `\mathbf{v}`, `\mathbf{r}`, `\mathbf{a}` и т.д. Стрелки (`\vec{}`) не использовать.
+- Векторы **греческими** буквами: `\boldsymbol{\Omega}`, `\boldsymbol{\omega}` и т.д.
+- Орты: `\hat{\mathbf{e}}_x`, `\hat{\mathbf{e}}_y`, `\hat{\mathbf{e}}_z`.
 - Производная по времени: `\dot{x}`, `\ddot{x}`.
 - Дифференциал: `\dd{t}` (physics) или `\mathrm{d}t`.
 
