@@ -29,10 +29,12 @@ status: ожидает-сводки
 - Интерпретация графиков: наклон касательной к $x(t)$ даёт $v$, наклон касательной к $v(t)$ даёт $a$.
 
 ### Ключевые формулы
-$$ v_x = \frac{dx}{dt} = \dot{x} $$
-$$ a_x = \frac{dv_x}{dt} = \ddot{x} $$
-$$ \vec{v} = \frac{d\vec{r}}{dt} = \frac{dx}{dt}\vec{i} + \frac{dy}{dt}\vec{j} + \frac{dz}{dt}\vec{k} $$
-$$ \vec{a} = \frac{d\vec{v}}{dt} = \frac{d^2\vec{r}}{dt^2} = \ddot{x}\vec{i} + \ddot{y}\vec{j} + \ddot{z}\vec{k} $$
+$$
+v_x = \frac{dx}{dt} = \dot{x} \
+a_x = \frac{dv_x}{dt} = \ddot{x} \
+\vec{v} = \frac{d\vec{r}}{dt} = \frac{dx}{dt}\vec{i} + \frac{dy}{dt}\vec{j} + \frac{dz}{dt}\vec{k} \
+\vec{a} = \frac{d\vec{v}}{dt} = \frac{d^2\vec{r}}{dt^2} = \ddot{x}\vec{i} + \ddot{y}\vec{j} + \ddot{z}\vec{k}
+$$
 Правила дифференцирования:
 $$ (u+v)' = u' + v', \quad (uv)' = u'v + uv', \quad \left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}, \quad (f(g(x)))' = f'(g)g' $$
 

@@ -35,11 +35,13 @@ status: ожидает-сводки
 - §1.11 Motion in Plane Polar Coordinates, с. 26–35: Введение полярных координат. Ключевой вывод: $\frac{d\hat{r}}{dt} = \dot{\theta}\hat{\theta}$, $\frac{d\hat{\theta}}{dt} = -\dot{\theta}\hat{r}$ (выводится дважды: аналитически через $\hat{r}=\cos\theta\hat{i}+\sin\theta\hat{j}$ и геометрически через пределы малых углов). Получение $\vec{v} = \dot{r}\hat{r} + r\dot{\theta}\hat{\theta}$ и $\vec{a} = (\ddot{r} - r\dot{\theta}^2)\hat{r} + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\hat{\theta}$. Физическая интерпретация компонент.
 
 ### Ключевые формулы и выводы
-$$ \vec{A} \cdot \vec{B} = A_x B_x + A_y B_y + A_z B_z = AB\cos\phi $$
-$$ \vec{A} \times \vec{B} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ A_x & A_y & A_z \\ B_x & B_y & B_z \end{vmatrix} $$
-$$ \frac{d\hat{r}}{dt} = \dot{\theta}\hat{\theta}, \quad \frac{d\hat{\theta}}{dt} = -\dot{\theta}\hat{r} \quad \text{(производные полярных ортов)} $$
-$$ \vec{v} = \dot{r}\hat{r} + r\dot{\theta}\hat{\theta} $$
-$$ \vec{a} = \underbrace{(\ddot{r} - r\dot{\theta}^2)}_{a_r}\hat{r} + \underbrace{(r\ddot{\theta} + 2\dot{r}\dot{\theta})}_{a_\theta}\hat{\theta} $$
+$$
+\vec{A} \cdot \vec{B} = A_x B_x + A_y B_y + A_z B_z = AB\cos\phi \
+\vec{A} \times \vec{B} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ A_x & A_y & A_z \\ B_x & B_y & B_z \end{vmatrix} \
+\frac{d\hat{r}}{dt} = \dot{\theta}\hat{\theta}, \quad \frac{d\hat{\theta}}{dt} = -\dot{\theta}\hat{r} \quad \text{(производные полярных ортов)} \
+\vec{v} = \dot{r}\hat{r} + r\dot{\theta}\hat{\theta} \
+\vec{a} = \underbrace{(\ddot{r} - r\dot{\theta}^2)}_{a_r}\hat{r} + \underbrace{(r\ddot{\theta} + 2\dot{r}\dot{\theta})}_{a_\theta}\hat{\theta}
+$$
 **Нестандартный вывод Kleppner:** В отличие от многих учебников, где кориолисова компонента $2\dot{r}\dot{\theta}$ появляется "магически" при переходе в вращающуюся СО, Kleppner строго выводит её из кинематики изменения базисных векторов в инерциальной системе. Это подчёркивает, что ускорение Кориолиса — не артефакт неинерциальности, а следствие криволинейной параметризации траектории.
 
 ### Примеры (Examples) и задачи

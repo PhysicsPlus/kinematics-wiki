@@ -68,20 +68,26 @@ status: ожидает сводки от Qwen
 - **Тангенс/Котангенс**: $\operatorname{tg} t = \sin t/\cos t$ (ордината точки пересечения луча с осью тангенсов), $\operatorname{ctg} t = \cos t/\sin t$ (с. 27, 29).
 
 ### Формулы суммы и разности
-$$\sin(\alpha \pm \beta) = \sin\alpha\cos\beta \pm \cos\alpha\sin\beta$$
-$$\cos(\alpha \pm \beta) = \cos\alpha\cos\beta \mp \sin\alpha\sin\beta$$
-$$\operatorname{tg}(\alpha \pm \beta) = \frac{\operatorname{tg}\alpha \pm \operatorname{tg}\beta}{1 \mp \operatorname{tg}\alpha\operatorname{tg}\beta}$$
+$$
+\sin(\alpha \pm \beta) = \sin\alpha\cos\beta \pm \cos\alpha\sin\beta \
+\cos(\alpha \pm \beta) = \cos\alpha\cos\beta \mp \sin\alpha\sin\beta \
+\operatorname{tg}(\alpha \pm \beta) = \frac{\operatorname{tg}\alpha \pm \operatorname{tg}\beta}{1 \mp \operatorname{tg}\alpha\operatorname{tg}\beta}
+$$
 
 ### Формулы произведения и суммы
-$$\sin\alpha\cos\beta = \frac{1}{2}\left[\sin(\alpha+\beta) + \sin(\alpha-\beta)\right]$$
-$$\cos\alpha\cos\beta = \frac{1}{2}\left[\cos(\alpha-\beta) + \cos(\alpha+\beta)\right]$$
-$$\sin\alpha \pm \sin\beta = 2\sin\frac{\alpha\pm\beta}{2}\cos\frac{\alpha\mp\beta}{2}$$
-$$\cos\alpha - \cos\beta = -2\sin\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}$$
+$$
+\sin\alpha\cos\beta = \frac{1}{2}\left[\sin(\alpha+\beta) + \sin(\alpha-\beta)\right] \
+\cos\alpha\cos\beta = \frac{1}{2}\left[\cos(\alpha-\beta) + \cos(\alpha+\beta)\right] \
+\sin\alpha \pm \sin\beta = 2\sin\frac{\alpha\pm\beta}{2}\cos\frac{\alpha\mp\beta}{2} \
+\cos\alpha - \cos\beta = -2\sin\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}
+$$
 
 ### Формулы кратных углов
-$$\sin 2\alpha = 2\sin\alpha\cos\alpha$$
-$$\cos 2\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha$$
-$$\sin 3\alpha = 3\sin\alpha - 4\sin^3\alpha, \quad \cos 3\alpha = 4\cos^3\alpha - 3\cos\alpha$$
+$$
+\sin 2\alpha = 2\sin\alpha\cos\alpha \
+\cos 2\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha \
+\sin 3\alpha = 3\sin\alpha - 4\sin^3\alpha, \quad \cos 3\alpha = 4\cos^3\alpha - 3\cos\alpha
+$$
 
 ### Обратные функции
 - $\arcsin a \in [-\pi/2, \pi/2]$, $\arccos a \in [0, \pi]$, $\operatorname{arctg} a \in (-\pi/2, \pi/2)$ (с. 45, 48, 50).
