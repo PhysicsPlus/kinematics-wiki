@@ -24,7 +24,7 @@
   "githubCopilotToken": "",
   "githubCopilotTokenExpiresAt": 0,
   "defaultChainType": "llm_chain",
-  "defaultModelKey": "claude-sonnet-4-6|anthropic",
+  "defaultModelKey": "deepseek-chat|deepseek",
   "embeddingModelKey": "openai/text-embedding-3-small|openrouterai",
   "temperature": 0.1,
   "maxTokens": 6000,
@@ -106,8 +106,8 @@
       "isBuiltIn": true,
       "projectEnabled": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "apiKey": ""
     },
@@ -117,8 +117,8 @@
       "enabled": true,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "apiKey": ""
     },
@@ -129,8 +129,8 @@
       "isBuiltIn": true,
       "projectEnabled": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "apiKey": ""
     },
@@ -162,8 +162,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "apiKey": ""
     },
@@ -257,8 +257,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "apiKey": ""
     },
@@ -268,8 +268,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "apiKey": ""
     },
@@ -279,8 +279,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "apiKey": ""
     },
@@ -298,38 +298,42 @@
     {
       "name": "deepseek-chat",
       "provider": "deepseek",
-      "enabled": false,
+      "enabled": true,
       "isBuiltIn": true,
-      "apiKey": ""
+      "apiKey": "",
+      "enableCors": false
     },
     {
       "name": "deepseek-reasoner",
       "provider": "deepseek",
-      "enabled": false,
+      "enabled": true,
       "isBuiltIn": true,
       "capabilities": [
         "reasoning"
       ],
-      "apiKey": ""
+      "apiKey": "",
+      "enableCors": false
     },
     {
       "name": "deepseek-ai/DeepSeek-V3",
       "provider": "siliconflow",
-      "enabled": false,
+      "enabled": true,
       "isBuiltIn": false,
       "baseUrl": "https://api.siliconflow.com/v1",
-      "apiKey": ""
+      "apiKey": "",
+      "enableCors": false
     },
     {
       "name": "deepseek-ai/DeepSeek-R1",
       "provider": "siliconflow",
-      "enabled": false,
+      "enabled": true,
       "isBuiltIn": false,
       "baseUrl": "https://api.siliconflow.com/v1",
       "capabilities": [
         "reasoning"
       ],
-      "apiKey": ""
+      "apiKey": "",
+      "enableCors": false
     }
   ],
   "activeEmbeddingModels": [
