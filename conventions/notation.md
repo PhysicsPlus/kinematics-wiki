@@ -27,19 +27,26 @@ level: 1-3
 | Касательное направление | $\hat{\mathbf{e}}_\tau$ | `\hat{\mathbf{e}}_\tau` |
 | Нормальное направление | $\hat{\mathbf{e}}_n$ | `\hat{\mathbf{e}}_n` |
 
-### Семантические макросы (для книги)
+### Конвертация Obsidian → LaTeX (книга)
 
-В LaTeX-файлах книги определяем макросы в преамбуле для упрощения смены обозначений:
+В книге используется `unicode-math` (LuaLaTeX), поэтому обозначения отличаются от Obsidian:
 
-```tex
-\newcommand{\fvec}[1]{\mathbf{#1}}          % свободный вектор
-\newcommand{\segvec}[1]{\overrightarrow{#1}} % направленный отрезок
-\newcommand{\unitv}[1]{\hat{\mathbf{e}}_{#1}} % единичный вектор
-```
+| Obsidian | LaTeX (книга) | Пример |
+|----------|---------------|--------|
+| `\mathbf{v}` | `\mbfv` | вектор скорости |
+| `\mathbf{r}` | `\mbfr` | радиус-вектор |
+| `\mathbf{a}` | `\mbfa` | ускорение |
+| `\mathbf{F}` | `\mbfF` | сила |
+| `\boldsymbol{\omega}` | `\mbfomega` | угловая скорость |
+| `\boldsymbol{\Omega}` | `\mbfOmega` | угловая скорость СО |
+| `\hat{\mathbf{e}}_x` | `\hat{\mbfe}_x` | орт |
+| `\overrightarrow{AB}` | `\vv{AB}` | направленный отрезок (esvect) |
+
+Семантических макросов (`\fvec`, `\unitv`, `\segvec`) не используем — пишем напрямую.
 
 ### В заметках базы знаний
 
-В Obsidian-заметках используем непосредственно LaTeX-команды:
+В Obsidian-заметках используем стандартные LaTeX-команды:
 - Вектор скорости: `$\mathbf{v}$`
 - Орт оси $x$: `$\hat{\mathbf{e}}_x$`
 - Направленный отрезок: `$\overrightarrow{AB}$`

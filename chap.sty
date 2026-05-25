@@ -257,11 +257,11 @@
   \end{tcolorbox}%
 }
 
-% Пример — без выделения
-\newenvironment{example}{%
+% Пример — без выделения, с заголовком
+\newenvironment{example}[1]{%
   \par\vspace{0.4\baselineskip}%
   \noindent\refstepcounter{excounter}%
-  {\scshape Пример \theexcounter.}\ \normalfont\ignorespaces
+  {\scshape Пример \theexcounter.}\ \textit{#1.}\normalfont\par\nobreak\ignorespaces
 }{%
   \par\vspace{0.3\baselineskip}%
 }

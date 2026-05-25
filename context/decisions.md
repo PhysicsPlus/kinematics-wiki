@@ -102,31 +102,30 @@
 
 **Преобразования разметки:**
 
-| Obsidian | LaTeX |
-|----------|-------|
-| `$$...$$` | `\[...\]` |
-| `## ☆ Заголовок` | `\section{Заголовок}` |
-| `## ★ Заголовок` | `\section{Заголовок}` |
-| `## ⭐ Заголовок` | `\section*{Заголовок}` (со звёздочкой в тексте) |
-| `> [!definition]` | `\begin{definition}...\end{definition}` |
-| `> [!example] Заголовок` | `\begin{example}{Заголовок}...\end{example}` |
-| `[[Имя заметки]]` | убрать или заменить на `\nameref` |
-| `**термин**` | `\textbf{термин}` |
-| `$\mathbf{v}$` | `$\fvec{v}$` (семантический макрос) |
-| `$\hat{\mathbf{e}}_x$` | `$\unitv{x}$` (семантический макрос) |
-| `$\overrightarrow{AB}$` | `$\segvec{AB}$` (семантический макрос) |
+| Obsidian | LaTeX (книга) | Комментарий |
+|----------|---------------|-------------|
+| `$$...$$` | `\[...\]` | |
+| `## ☆ Заголовок` | `\section{Заголовок}` | |
+| `## ★ Заголовок` | `\section{Заголовок}` | |
+| `## ⭐ Заголовок` | `\begin{remark} ... \end{remark}` | фиолетовая полоса слева |
+| `> [!definition]` | `\begin{definition}...\end{definition}` | индиго полоса слева |
+| `> [!example] Заголовок` | `\begin{example}{Заголовок}...\end{example}` | |
+| `[[Имя заметки]]` | убрать | |
+| `**термин**` | `\textbf{термин}` | |
+| `\mathbf{v}` | `\mbfv` | unicode-math |
+| `\mathbf{r}` | `\mbfr` | unicode-math |
+| `\boldsymbol{\omega}` | `\mbfomega` | unicode-math |
+| `\boldsymbol{\Omega}` | `\mbfOmega` | unicode-math |
+| `\hat{\mathbf{e}}_x` | `\hat{\mbfe}_x` | unicode-math |
+| `\overrightarrow{AB}` | `\vv{AB}` | esvect |
 
-**Семантические макросы** (определяются в `chap.sty`):
-
-```tex
-\newcommand{\fvec}[1]{\mathbf{#1}}
-\newcommand{\segvec}[1]{\overrightarrow{#1}}
-\newcommand{\unitv}[1]{\hat{\mathbf{e}}_{#1}}
-```
+Семантических макросов (`\fvec`, `\unitv`, `\segvec`) не используем — пишем напрямую.
+Полная таблица замен — в `conventions/notation.md`.
 
 **Среды tcolorbox** (определяются в `chap.sty`):
-- `definition` — для `[!definition]`
-- `example` — для `[!example]`
+- `definition` — для `[!definition]`, индиго полоса слева
+- `example` — для `[!example]`, принимает заголовок: `\begin{example}{Заголовок}`
+- `remark` — для секций ⭐, фиолетовая полоса слева
 - `theorem`, `proof`, `note` — при необходимости
 
 **Что не конвертируется автоматически:**
