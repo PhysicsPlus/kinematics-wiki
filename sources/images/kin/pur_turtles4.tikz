@@ -1,5 +1,5 @@
 % Четыре черепахи в вершинах квадрата: траектории -- логарифмические спирали R = R_0 e^{-phi}.
-% Кривые обрываются незадолго до центра (R ~ 0,04 R_0), чтобы не сливаться в точке встречи.
+% Кривые обрываются незадолго до центра (R ~ 0,02 R_0), чтобы не сливаться в точке встречи.
 % Штриховой квадрат -- положение черепах через время T/2 (сторона вдвое меньше).
 \begin{tikzpicture}[scale=2.3]
   \def\Rz{1.8}
@@ -8,13 +8,13 @@
   \pgfmathsetmacro{\ph}{deg(ln(2))}
   \draw[thin, dashed] ({45-\ph}:\Rh) -- ({-45-\ph}:\Rh) -- ({-135-\ph}:\Rh) -- ({135-\ph}:\Rh) -- cycle;
   \foreach \s in {45,135,225,315}{
-    \draw[thick] plot[domain=0:190, samples=150, smooth, variable=\t]
+    \draw[thick] plot[domain=0:220, samples=180, smooth, variable=\t]
       ({\s-\t}:{\Rz*exp(-\t*pi/180)});
     \draw[myarrow] (\s:\Rz) -- ($(\s:\Rz)!0.25!(\s-90:\Rz)$);
     \node[point] at (\s:\Rz) {};
   }
   \node[point] at (0,0) {};
-  \node[below right=2pt, fill=white, inner sep=1pt] at (0,0) {$O$};
+  \node at (-36:0.2) {$O$};
   \node[above right] at (45:\Rz) {$B_1$};
   \node[below right] at (-45:\Rz) {$B_2$};
   \node[below left] at (-135:\Rz) {$B_3$};
