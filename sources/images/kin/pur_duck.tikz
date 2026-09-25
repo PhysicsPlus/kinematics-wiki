@@ -1,0 +1,26 @@
+% Утка плывёт по окружности радиуса R, собака в установившемся режиме -- по окружности радиуса r = Ru/v.
+% u/v = 1/2: r = R/2, delta = 60 градусов.
+\begin{tikzpicture}[scale=1]
+  \def\R{2.2}
+  \def\r{1.1}
+  \coordinate (O) at (0,0);
+  \coordinate (D) at (\r,0);
+  \coordinate (B) at (60:\R);
+  \draw[standart] (O) circle (\R);
+  \draw[thin, dashed] (O) circle (\r);
+  \draw[thin] (O) -- (D);
+  \draw[thin] (O) -- (B);
+  \draw[standart] (D) -- (B);
+  \draw[myarrow] (D) -- ++(0,0.8) node[right] {$\mbfu$};
+  \draw[myarrow] (B) -- ++(150:0.9) node[above] {$\mbfv$};
+  \draw[thin] ($(D)+(0,0.18)$) -- ++(-0.18,0) -- ++(0,-0.18);
+  \pic[draw, thin, pic text={$\delta$}, angle radius=5mm, angle eccentricity=1.5] {angle = D--O--B};
+  \node[point] at (O) {};
+  \node[point] at (D) {};
+  \node[point] at (B) {};
+  \node[below left] at (O) {$O$};
+  \node[below right] at (D) {$A$};
+  \node[above right] at (B) {$B$};
+  \node[below] at (0.55,0) {$r$};
+  \node[left] at (60:1.2) {$R$};
+\end{tikzpicture}

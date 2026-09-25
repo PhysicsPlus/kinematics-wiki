@@ -1,0 +1,21 @@
+% Кривая погони: цель движется по оси Oy из начала координат, преследователь стартует из (L, 0).
+% Масштаб: L = 1. Сплошная линия -- lambda = v/u = 1/2, штриховая -- lambda = 1.
+\begin{tikzpicture}[scale=4]
+  \draw[myarrow] (-0.08,0) -- (1.18,0) node[below] {$x$};
+  \draw[myarrow] (0,-0.08) -- (0,1.45) node[left] {$y$};
+  \draw[heavy] plot[domain=0.0005:1, samples=200, smooth, variable=\x]
+    ({\x},{pow(\x,1.5)/3 - sqrt(\x) + 2/3});
+  \draw[thick, dashed] plot[domain=0.045:1, samples=200, smooth, variable=\x]
+    ({\x},{\x*\x/4 - ln(\x)/2 - 1/4});
+  % касательная к кривой (lambda = 1/2) проходит через текущее положение цели
+  \draw[thin] (0.5,0.0775) -- (0,0.2543);
+  \node[point] at (0.5,0.0775) {};
+  \node[point] at (0,0.2543) {};
+  \node[below right] at (0.5,0.0775) {$A$};
+  \node[left] at (0,0.2543) {$B$};
+  \node[point] at (1,0) {};
+  \node[below] at (1,0) {$L$};
+  \node[below left] at (0,0) {$O$};
+  \node[point] at (0,0.6667) {};
+  \node[left] at (0,0.6667) {$C$};
+\end{tikzpicture}
