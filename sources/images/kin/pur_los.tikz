@@ -1,5 +1,5 @@
 % Линия визирования AB: скорости преследователя и цели, углы beta_A и beta_B
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.5]
   \coordinate (A) at (0,0);
   \coordinate (B) at (5,1.5);
   \coordinate (B2) at ($(A)!1.3!(B)$);

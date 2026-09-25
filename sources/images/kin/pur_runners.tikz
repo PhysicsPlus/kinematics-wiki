@@ -1,5 +1,5 @@
 % Спортсмены на пересекающихся тропинках: A бежит под углом alpha к AB, B -- вдоль BA
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.5]
   \coordinate (A) at (0,0);
   \coordinate (B) at (5,0);
   \coordinate (P) at (35:3.2);
@@ -10,7 +10,8 @@
   \pic[draw, thin, pic text={$\alpha$}, angle radius=7mm, angle eccentricity=1.4] {angle = B--A--P};
   \draw[thin] (0,-0.25) -- (0,-0.65);
   \draw[thin] (5,-0.25) -- (5,-0.65);
-  \draw[thin, <->] (0,-0.5) -- node[below] {$L$} (5,-0.5);
+  \draw[{Stealth[inset=0pt, length=8pt, angle'=30]}-{Stealth[inset=0pt, length=8pt, angle'=30]}, line width=0.75pt]
+    (0,-0.5) -- node[below] {$L$} (5,-0.5);
   \node[point] at (A) {};
   \node[point] at (B) {};
   \node[left] at (A) {$A$};

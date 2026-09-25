@@ -1,5 +1,5 @@
 % Четыре черепахи в вершинах квадрата: траектории -- логарифмические спирали R = R_0 e^{-phi}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.6]
   \def\Rz{1.8}
   \draw[thin] (45:\Rz) -- (-45:\Rz) -- (-135:\Rz) -- (135:\Rz) -- cycle;
   \foreach \s in {45,135,225,315}{

@@ -1,6 +1,6 @@
 % Погоня за телом, движущимся по окружности радиуса R со скоростью v_1.
 % Установившийся режим при v_2 = 4v_1/5: r = 4R/5, |AB| = 3R/5, cos(delta) = 4/5.
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.45]
   \def\R{2.2}
   \def\r{1.76}
   \coordinate (O) at (0,0);

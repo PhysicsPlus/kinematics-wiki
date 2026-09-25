@@ -1,6 +1,6 @@
 % Кривая погони: цель движется по оси Oy из начала координат, преследователь стартует из (L, 0).
 % Масштаб: L = 1. Сплошная линия -- lambda = v/u = 1/2, штриховая -- lambda = 1.
-\begin{tikzpicture}[scale=4]
+\begin{tikzpicture}[scale=5.5]
   \draw[myarrow] (-0.08,0) -- (1.18,0) node[below] {$x$};
   \draw[myarrow] (0,-0.08) -- (0,1.45) node[left] {$y$};
   \draw[heavy] plot[domain=0.0005:1, samples=200, smooth, variable=\x]

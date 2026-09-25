@@ -1,5 +1,5 @@
 % Лиса бежит под углом alpha к направлению на зайца (угол отсчитан против часовой стрелки)
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.5]
   \coordinate (F) at (0,0);
   \coordinate (H) at (0,2.6);
   \coordinate (U) at (120:1.4);

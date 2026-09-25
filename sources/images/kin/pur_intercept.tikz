@@ -1,6 +1,6 @@
 % Перехват (параллельное сближение): линия визирования AB переносится параллельно самой себе.
 % alpha = 40 градусов, |BA| = 3; точка встречи M = (3/cos 40, 0).
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.5]
   \coordinate (B0) at (0,0);
   \coordinate (A0) at (2.298,1.928);
   \coordinate (M)  at (3.916,0);

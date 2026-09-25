@@ -1,0 +1,21 @@
+% Спортсмены: движение B относительно A. B движется по прямой со скоростью w,
+% составляющей угол alpha/2 с направлением BA; минимальное расстояние -- перпендикуляр AH.
+% L = 5, alpha = 35 градусов.
+\begin{tikzpicture}[scale=1.4]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (5,0);
+  \coordinate (H) at (0.452,-1.434);
+  \coordinate (E) at ($(B)!1.25!(H)$);
+  \draw[thin, dashed] (B) -- (E);
+  \draw[standart] (A) -- node[above] {$L$} (B);
+  \draw[standart] (A) -- node[left] {$d_{\min}$} (H);
+  \draw[myarrow] (B) -- ($(B)!0.3!(H)$) node[below right] {$\mbfw$};
+  \draw[thin] (0.6237,-1.3799) -- (0.5696,-1.2082) -- (0.3979,-1.2623);
+  \pic[draw, thin, pic text={$\frac{\alpha}{2}$}, angle radius=12mm, angle eccentricity=1.35] {angle = A--B--H};
+  \node[point] at (A) {};
+  \node[point] at (B) {};
+  \node[point] at (H) {};
+  \node[left] at (A) {$A$};
+  \node[right] at (B) {$B$};
+  \node[below] at (H) {$H$};
+\end{tikzpicture}
