@@ -1,0 +1,13 @@
+% Треугольник скоростей при перехвате: u = v + w, вектор w параллелен линии визирования
+% (направлению от катера к судну). alpha = 40 градусов, |v| = 3.
+\begin{tikzpicture}[scale=1.5]
+  \coordinate (P) at (0,0);
+  \coordinate (Q) at (3,0);
+  \coordinate (F) at (1.240,-1.477);
+  \draw[thin, dashed] ($(Q)!-0.35!(F)$) -- ($(Q)!1.6!(F)$);
+  \draw[myarrow] (P) -- node[above] {$\mbfv$} (Q);
+  \draw[myarrow] (Q) -- node[below right] {$\mbfw$} (F);
+  \draw[myarrow] (P) -- node[below left] {$\mbfu$} (F);
+  \draw[thin] (1.393,-1.348) -- (1.264,-1.195) -- (1.111,-1.324);
+  \pic[draw, thin, pic text={$\alpha$}, angle radius=9mm, angle eccentricity=1.35] {angle = P--Q--F};
+\end{tikzpicture}
