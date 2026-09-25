@@ -1,0 +1,18 @@
+% Спортсмены на пересекающихся тропинках: A бежит под углом alpha к AB, B -- вдоль BA
+\begin{tikzpicture}[scale=1]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (5,0);
+  \coordinate (P) at (35:3.2);
+  \draw[thin, dashed] (A) -- (P);
+  \draw[thin, dashed] (A) -- (B);
+  \draw[myarrow] (A) -- (35:1.3) node[above left] {$\mbfv_A$};
+  \draw[myarrow] (B) -- (3.7,0) node[above] {$\mbfv_B$};
+  \pic[draw, thin, pic text={$\alpha$}, angle radius=7mm, angle eccentricity=1.4] {angle = B--A--P};
+  \draw[thin] (0,-0.25) -- (0,-0.65);
+  \draw[thin] (5,-0.25) -- (5,-0.65);
+  \draw[thin, <->] (0,-0.5) -- node[below] {$L$} (5,-0.5);
+  \node[point] at (A) {};
+  \node[point] at (B) {};
+  \node[left] at (A) {$A$};
+  \node[right] at (B) {$B$};
+\end{tikzpicture}
