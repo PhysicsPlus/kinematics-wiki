@@ -5,6 +5,9 @@
 % § 5. Задачи преследования
 % Раздел самодостаточен: ссылок на другие разделы в тексте нет.
 %==============================================================================
+% Боксы для выравнивания рисунков в одну строку по базовой линии
+\newsavebox{\purboxA}
+\newsavebox{\purboxB}
 \setcounter{section}{4}
 \section{Задачи преследования}
 
@@ -931,7 +934,7 @@ v_{\text{сбл}} = v_2 - v_1\cos\delta = \frac{4}{5}v_1 - \frac{4}{5}v_1 = 0,
 \subsection{Задачи}
 %==============================================================================
 
-\begin{enumerate}
+\begin{enumerate}[wide]
 
   \item (\textit{Задачник <<Кванта>>}) По окружности радиуса $R$ с постоянной скоростью
   $v$ бежит лошадь. На расстоянии $r$ от центра окружности стоит человек. Чему равно
@@ -1007,15 +1010,20 @@ v_{\text{сбл}} = v_2 - v_1\cos\delta = \frac{4}{5}v_1 - \frac{4}{5}v_1 = 0,
   ограничено трением: коэффициент трения лап о поверхность для каждого тигра
   равен~$\mu$. В течение какого времени тигры могут поддерживать такое движение?
 
-  \begin{figure}[h]\centering
-    \begin{minipage}[b]{0.4\linewidth}\centering
-      \input{images/kin/pur_tigers.tikz}%
+  \begin{figure}[h]
+    \sbox{\purboxA}{\input{images/kin/pur_tigers.tikz}}%
+    \sbox{\purboxB}{\input{images/kin/pur_balloon.tikz}}%
+    \hspace*{\fill}%
+    \begin{minipage}[t]{\wd\purboxA}\centering
+      \usebox{\purboxA}%
       \caption{}\label{fig:pur_tigers}%
-    \end{minipage}\hfill
-    \begin{minipage}[b]{0.56\linewidth}\centering
-      \input{images/kin/pur_balloon.tikz}%
+    \end{minipage}%
+    \hspace*{\fill}%
+    \begin{minipage}[t]{\wd\purboxB}\centering
+      \usebox{\purboxB}%
       \caption{}\label{fig:pur_balloon}%
-    \end{minipage}
+    \end{minipage}%
+    \hspace*{\fill}
   \end{figure}
 
   \item (\textit{Всесоюз 1984, 9 класс}) Для измерения распределения скорости ветра по

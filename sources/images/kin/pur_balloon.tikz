@@ -1,11 +1,11 @@
 % Шар-зонд: запущен из точки S, наблюдатель N на расстоянии L; ветер сносит шар влево.
-\begin{tikzpicture}[scale=1.25]
+\begin{tikzpicture}[scale=1.4, baseline=0pt]
   \coordinate (S) at (0,0);
   \coordinate (N) at (2.6,0);
   \coordinate (B) at (-0.8,2.2);
   \begin{scope}
-    \clip (-1.2,-0.18) rectangle (3.3,0);
-    \foreach \x in {-1.2,-1.025,...,3.655} \draw[thin] (\x,0) -- ++(-0.18,-0.18);
+    \clip (-1.2,-0.135) rectangle (3.3,0);
+    \foreach \x in {-1.2,-1.04,...,3.595} \draw[thin] (\x,0) -- ++(-0.135,-0.135);
   \end{scope}
   \draw[standart] (-1.2,0) -- (3.3,0);
   \draw[thin, dashed] plot[domain=0:2.2, samples=40, smooth, variable=\y] ({-0.8*(\y/2.2)^4}, \y);

@@ -9,12 +9,12 @@
   \coordinate (D) at (\d,1.5);
   \coordinate (P) at (1.5,\d);
   \begin{scope}
-    \clip (-1.2,-0.18) rectangle (3.6,0);
-    \foreach \x in {-1.2,-1.025,...,3.955} \draw[thin] (\x,0) -- ++(-0.18,-0.18);
+    \clip (-1.2,-0.135) rectangle (3.6,0);
+    \foreach \x in {-1.2,-1.025,...,3.91} \draw[thin] (\x,0) -- ++(-0.135,-0.135);
   \end{scope}
   \begin{scope}
-    \clip (-1.2,3) rectangle (3.6,3.18);
-    \foreach \x in {-1.38,-1.205,...,3.775} \draw[thin] (\x,3) -- ++(0.18,0.18);
+    \clip (-1.2,3) rectangle (3.6,3.135);
+    \foreach \x in {-1.335,-1.16,...,3.775} \draw[thin] (\x,3) -- ++(0.135,0.135);
   \end{scope}
   \draw[standart] (-1.2,0) -- (3.6,0);
   \draw[standart] (-1.2,\d) -- (3.6,\d);

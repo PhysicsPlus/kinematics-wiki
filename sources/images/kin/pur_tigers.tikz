@@ -1,5 +1,5 @@
 % Три тигра в вершинах прямоугольного равнобедренного треугольника (Всеросс 2022)
-\begin{tikzpicture}[scale=1.0]
+\begin{tikzpicture}[scale=1.15, baseline=0pt]
   \coordinate (A) at (0,0);
   \coordinate (B) at (3,0);
   \coordinate (C) at (3,3);
@@ -15,4 +15,5 @@
   \node[below left] at (A) {$A$};
   \node[below right] at (B) {$B$};
   \node[above right] at (C) {$C$};
+  \path (0,-1.03);
 \end{tikzpicture}
