@@ -24,4 +24,6 @@
   \node[below right] at (A) {$A$};
   \node[above right] at (B) {$B$};
   \node[below] at (0.9,0) {$r$};
+  % Дополнительные 2 мм до подписи (сдвиг делится на scale)
+  \path (current bounding box.south) ++(0,{-2mm/1.45});
 \end{tikzpicture}

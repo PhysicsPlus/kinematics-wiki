@@ -278,10 +278,15 @@
 % -----------------------------------------------------------------------
 % 13. ОТСТУПЫ ВОКРУГ ФОРМУЛ
 % -----------------------------------------------------------------------
-\setlength{\abovedisplayskip}{0.5\baselineskip}
-\setlength{\belowdisplayskip}{0.5\baselineskip}
-\setlength{\abovedisplayshortskip}{0.2\baselineskip}
-\setlength{\belowdisplayshortskip}{0.4\baselineskip}
+% Резиновые отступы от 0,5 до 0,7 строки. Класс переустанавливает эти длины
+% в \normalsize, поэтому они дописываются в конец \normalsize.
+\newcommand*{\PP@displayskips}{%
+  \setlength{\abovedisplayskip}{0.6\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}%
+  \setlength{\belowdisplayskip}{0.6\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}%
+  \setlength{\abovedisplayshortskip}{0.2\baselineskip}%
+  \setlength{\belowdisplayshortskip}{0.6\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}}
+\expandafter\g@addto@macro\csname normalsize \endcsname{\PP@displayskips}
+\PP@displayskips
 
 % -----------------------------------------------------------------------
 % 14. ВСПОМОГАТЕЛЬНЫЕ ПАКЕТЫ И КОМАНДЫ

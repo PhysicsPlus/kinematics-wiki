@@ -48,7 +48,7 @@
     \node[above left] at (0,0) {$A$};
     \node[below right] at (2,0) {$B_0$};
     \node[below right] at (0,-1) {$V$};
-    \node[right] at (P) {$B$};
+    \node[right, yshift=-2.5pt] at (P) {$B$};
     \node at (0.1,-3.2) {б)};
   \end{scope}
 \end{tikzpicture}

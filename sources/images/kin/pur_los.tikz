@@ -12,8 +12,8 @@
   \draw[myarrow] (B) -- (VB);
   \node[left=1pt] at ($(VB)!1.4mm!(B)$) {$\mbfv_B$};
   \pic[draw, thin, pic text={$\beta_A$}, angle radius=7mm, angle eccentricity=1.55] {angle = B--A--VA};
-  \pic[draw, thin, pic text={$\beta_B$}, angle radius=5mm, angle eccentricity=1.75] {angle = B2--B--VB};
-  \pic[draw, thin, angle radius=5.7mm] {angle = B2--B--VB};
+  \pic[draw, thin, pic text={$\beta_B$}, angle radius=3.5mm, angle eccentricity=2.5] {angle = B2--B--VB};
+  \pic[draw, thin, angle radius=4.1mm] {angle = B2--B--VB};
   \node[point] at (A) {};
   \node[point] at (B) {};
   \node[below left] at (A) {$A$};
