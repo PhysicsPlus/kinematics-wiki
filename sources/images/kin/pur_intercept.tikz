@@ -1,0 +1,29 @@
+% Перехват (параллельное сближение): линия визирования AB переносится параллельно самой себе.
+% alpha = 40 градусов, |BA| = 3; точка встречи M = (3/cos 40, 0).
+\begin{tikzpicture}[scale=1.5]
+  \coordinate (B0) at (0,0);
+  \coordinate (A0) at (2.298,1.928);
+  \coordinate (M)  at (3.916,0);
+  \coordinate (B1) at (1.958,0);
+  \coordinate (A1) at (3.107,0.964);
+  \draw[thin] (-0.4,0) -- (4.6,0);
+  \draw[standart] (A0) -- (M);
+  \draw[thin, dashed] (A0) -- (B0);
+  \draw[thin, dashed] (A1) -- (B1);
+  \draw[myarrow] (B0) -- (0.9,0);
+  \node[below=1pt] at ($(0.9,0)!1.4mm!(B0)$) {$\mbfv$};
+  \coordinate (U) at ($(A0)!0.3!(M)$);
+  \draw[myarrow] (A0) -- (U);
+  \node[right=1pt] at ($(U)!1.4mm!(A0)$) {$\mbfu$};
+  \pic[draw, thin, pic text={$\alpha$}, angle radius=8mm, angle eccentricity=1.35] {angle = M--B0--A0};
+  \node[point] at (B0) {};
+  \node[point] at (A0) {};
+  \node[point] at (B1) {};
+  \node[point] at (A1) {};
+  \node[point] at (M) {};
+  \node[below left] at (B0) {$B$};
+  \node[above right] at (A0) {$A$};
+  \node[below] at (B1) {$B'$};
+  \node[right] at (A1) {$A'$};
+  \node[below] at (M) {$M$};
+\end{tikzpicture}

@@ -1,0 +1,29 @@
+% Погоня за телом, движущимся по окружности радиуса R со скоростью v_1.
+% Установившийся режим при v_2 = 4v_1/5: r = 4R/5, |AB| = 3R/5, cos(delta) = 4/5.
+\begin{tikzpicture}[scale=1.45]
+  \def\R{2.2}
+  \def\r{1.76}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (\r,0);
+  \coordinate (B) at (36.87:\R);
+  \draw[standart] (O) circle (\R);
+  \draw[thin, dashed] (O) circle (\r);
+  \draw[thin] (O) -- (A);
+  \draw[thin] (O) -- (B);
+  \draw[standart] (A) -- (B);
+  \draw[myarrow] (A) -- ++(0,0.75) node[right, pos=0.55] {$\mbfv_2$};
+  \coordinate (V1) at ($(B)+(126.87:0.9)$);
+  \draw[myarrow] (B) -- (V1);
+  \node[above right=0pt] at ($(V1)!1.4mm!(B)$) {$\mbfv_1$};
+  \draw[thin] ($(A)+(0,0.18)$) -- ++(-0.18,0) -- ++(0,-0.18);
+  \pic[draw, thin, pic text={$\delta$}, angle radius=7mm, angle eccentricity=1.4] {angle = A--O--B};
+  \node[point] at (O) {};
+  \node[point] at (A) {};
+  \node[point] at (B) {};
+  \node[below left] at (O) {$O$};
+  \node[below right] at (A) {$A$};
+  \node[above right] at (B) {$B$};
+  \node[below] at (0.9,0) {$r$};
+  % Дополнительные 2 мм до подписи (сдвиг делится на scale)
+  \path (current bounding box.south) ++(0,{-2mm/1.45});
+\end{tikzpicture}
