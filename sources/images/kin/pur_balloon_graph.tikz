@@ -12,10 +12,6 @@
     xlabel style={at={(axis description cs:1,0)}, anchor=north west, xshift=4pt, yshift=-3pt},
     tick label style={font=\small}]
     \node[anchor=east, font=\small, inner sep=1pt] at (rel axis cs:0,1) {$\alpha$, $^\circ$\hspace{3pt}};
-    % Вспомогательные линии: касательная в начале координат (alpha = wt/L)
-    % и проекции точки максимума (t = 7 мин, tg(alpha) = 1,5).
-    \addplot[standart, dashed, domain=0:4.54, samples=2] {deg(0.25*x)};
-    \draw[standart, dashed] (axis cs:0,56.31) -- (axis cs:7,56.31) -- (axis cs:7,0);
     \addplot[heavy, domain=0:8.7, samples=120, smooth] {atan(0.25*x/(1+(x/7)^7/6))};
   \end{axis}
 \end{tikzpicture}
