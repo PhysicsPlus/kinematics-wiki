@@ -1,0 +1,17 @@
+% Зависимость угла возвышения шара-зонда от времени. Модель: скорость подъёма
+% w = 0,25 км/мин, L = 1 км, скорость ветра u = (1/6 км/мин)(h/1,75 км)^6;
+% снос x = (t/7)^7/6 км, tg(alpha) = wt/(L + x); максимум при t = 7 мин.
+\begin{tikzpicture}
+  \begin{axis}[olymp-grid,
+    width=7.6cm, height=5.6cm,
+    xmin=0, xmax=9, ymin=0, ymax=70,
+    xtick={0,1,...,9}, ytick={0,10,...,60},
+    major grid style={thin, black!60}, minor grid style={very thin, black!30},
+    minor x tick num=1, minor y tick num=1,
+    xlabel={$t$, мин}, ylabel={},
+    xlabel style={at={(axis description cs:1,0)}, anchor=north west, xshift=4pt, yshift=-3pt},
+    tick label style={font=\small}]
+    \node[anchor=east, font=\small, inner sep=1pt] at (rel axis cs:0,1) {$\alpha$, $^\circ$\hspace{3pt}};
+    \addplot[heavy, domain=0:8.7, samples=120, smooth] {atan(0.25*x/(1+(x/7)^7/6))};
+  \end{axis}
+\end{tikzpicture}
