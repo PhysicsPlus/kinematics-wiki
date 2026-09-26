@@ -4,7 +4,7 @@
   \coordinate (P) at (0,0);
   \coordinate (Q) at (3,0);
   \coordinate (F) at (1.240,-1.477);
-  \draw[thin, dashed] ($(Q)!-0.35!(F)$) -- ($(Q)!1.6!(F)$);
+  \draw[thin, dashed] ($(Q)!-0.25!(F)$) -- ($(Q)!1.12!(F)$);
   \draw[myarrow] (P) -- node[above] {$\mbfv$} (Q);
   \draw[myarrow] (Q) -- node[below right] {$\mbfw$} (F);
   \draw[myarrow] (P) -- node[below left] {$\mbfu$} (F);

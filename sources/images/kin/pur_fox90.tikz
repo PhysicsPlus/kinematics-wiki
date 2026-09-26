@@ -17,6 +17,9 @@
     \node[below=1pt] at ($(0.6,0)!1.4mm!(0,0)$) {$\mbfv$};
     \draw[myarrow] (0,-1) -- (-1.1,-1);
     \node[below=1pt] at ($(-1.1,-1)!1.4mm!(0,-1)$) {$\mbfu$};
+    % точки поверх начал стрелок
+    \node[point] at (0,0) {};
+    \node[point] at (0,-1) {};
     \node[above right] at (0,0) {$H_0$};
     \node[below right] at (0,-1) {$F_0$};
     \node at (2.2,-1.75) {а)};

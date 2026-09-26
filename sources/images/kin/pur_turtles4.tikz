@@ -15,8 +15,8 @@
   }
   \node[point] at (0,0) {};
   \node at (-36:0.2) {$O$};
-  \node[above right] at (45:\Rz) {$B_1$};
-  \node[below right] at (-45:\Rz) {$B_2$};
-  \node[below left] at (-135:\Rz) {$B_3$};
-  \node[above left] at (135:\Rz) {$B_4$};
+  \node[right] at (45:\Rz) {$B_1$};
+  \node[right] at (-45:\Rz) {$B_2$};
+  \node[left] at (-135:\Rz) {$B_3$};
+  \node[left] at (135:\Rz) {$B_4$};
 \end{tikzpicture}

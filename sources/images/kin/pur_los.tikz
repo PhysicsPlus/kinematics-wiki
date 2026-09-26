@@ -16,6 +16,6 @@
   \pic[draw, thin, angle radius=4.1mm] {angle = B2--B--VB};
   \node[point] at (A) {};
   \node[point] at (B) {};
-  \node[below left] at (A) {$A$};
+  \node[left] at (A) {$A$};
   \node[below right] at (B) {$B$};
 \end{tikzpicture}
