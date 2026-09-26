@@ -3,11 +3,11 @@
 % снос x = (t/7)^7/6 км, tg(alpha) = wt/(L + x); максимум при t = 7 мин.
 \begin{tikzpicture}
   \begin{axis}[olymp-grid,
-    width=7.6cm, height=5.6cm,
+    width=10.5cm, height=7cm,
     xmin=0, xmax=9, ymin=0, ymax=70,
     xtick={0,1,...,9}, ytick={0,10,...,60},
     major grid style={thin, black!60}, minor grid style={very thin, black!30},
-    minor x tick num=1, minor y tick num=1,
+    minor x tick num=4, minor y tick num=4,
     xlabel={$t$, мин}, ylabel={},
     xlabel style={at={(axis description cs:1,0)}, anchor=north west, xshift=4pt, yshift=-3pt},
     tick label style={font=\small}]
