@@ -13,7 +13,8 @@
   \draw[standart] (-1.8,0) -- (2.1,0);
   \draw[standart] (-1.8,3) -- (2.1,3);
   \draw[thin, dashed] (A) -- (B);
-  \draw[myarrow] (-1.5,1.5) -- (-0.5,1.5) node[above] {$u$};
+  \draw[myarrow] (-1.5,1.5) -- (-0.5,1.5);
+  \node[above=1pt] at ($(-0.5,1.5)!1.4mm!(-1.5,1.5)$) {$u$};
   \draw[{Stealth[inset=0pt, length=8pt, angle'=30]}-{Stealth[inset=0pt, length=8pt, angle'=30]}, line width=0.75pt]
     (1.3,0) -- node[right] {$l$} (1.3,3);
   \node[point] at (A) {};

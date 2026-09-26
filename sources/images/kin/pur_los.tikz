@@ -7,10 +7,13 @@
   \coordinate (VB) at ($(B)+(86.7:1.5)$);
   \draw[standart] (A) -- node[below right, pos=0.55] {$r$} (B);
   \draw[thin, dashed] (B) -- (B2);
-  \draw[myarrow] (A) -- (VA) node[above left] {$\mbfv_A$};
-  \draw[myarrow] (B) -- (VB) node[above] {$\mbfv_B$};
-  \pic[draw, thin, pic text={$\beta_A$}, angle radius=9mm, angle eccentricity=1.35] {angle = B--A--VA};
-  \pic[draw, thin, pic text={$\beta_B$}, angle radius=7mm, angle eccentricity=1.45] {angle = B2--B--VB};
+  \draw[myarrow] (A) -- (VA);
+  \node[left=1pt] at ($(VA)!1.4mm!(A)$) {$\mbfv_A$};
+  \draw[myarrow] (B) -- (VB);
+  \node[left=1pt] at ($(VB)!1.4mm!(B)$) {$\mbfv_B$};
+  \pic[draw, thin, pic text={$\beta_A$}, angle radius=7mm, angle eccentricity=1.55] {angle = B--A--VA};
+  \pic[draw, thin, pic text={$\beta_B$}, angle radius=5mm, angle eccentricity=1.75] {angle = B2--B--VB};
+  \pic[draw, thin, angle radius=5.7mm] {angle = B2--B--VB};
   \node[point] at (A) {};
   \node[point] at (B) {};
   \node[below left] at (A) {$A$};

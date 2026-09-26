@@ -12,7 +12,9 @@
   \draw[thin] (O) -- (B);
   \draw[standart] (A) -- (B);
   \draw[myarrow] (A) -- ++(0,0.75) node[right, pos=0.55] {$\mbfv_2$};
-  \draw[myarrow] (B) -- ++(126.87:0.9) node[above] {$\mbfv_1$};
+  \coordinate (V1) at ($(B)+(126.87:0.9)$);
+  \draw[myarrow] (B) -- (V1);
+  \node[above right=0pt] at ($(V1)!1.4mm!(B)$) {$\mbfv_1$};
   \draw[thin] ($(A)+(0,0.18)$) -- ++(-0.18,0) -- ++(0,-0.18);
   \pic[draw, thin, pic text={$\delta$}, angle radius=7mm, angle eccentricity=1.4] {angle = A--O--B};
   \node[point] at (O) {};

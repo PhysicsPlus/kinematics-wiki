@@ -4,8 +4,11 @@
   \coordinate (H) at (0,2.6);
   \coordinate (U) at (120:1.4);
   \draw[thin, dashed] (F) -- node[right] {$L$} (H);
-  \draw[myarrow] (H) -- ++(1.2,0) node[above] {$\mbfv$};
-  \draw[myarrow] (F) -- (U) node[left] {$\mbfu$};
+  \coordinate (V) at ($(H)+(1.2,0)$);
+  \draw[myarrow] (H) -- (V);
+  \node[above=1pt] at ($(V)!1.4mm!(H)$) {$\mbfv$};
+  \draw[myarrow] (F) -- (U);
+  \node[left=1pt] at ($(U)!1.4mm!(F)$) {$\mbfu$};
   \pic[draw, thin, pic text={$\alpha$}, angle radius=8mm, angle eccentricity=1.35] {angle = H--F--U};
   \node[point] at (F) {};
   \node[point] at (H) {};

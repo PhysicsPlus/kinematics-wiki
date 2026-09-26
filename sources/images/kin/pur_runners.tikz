@@ -5,8 +5,10 @@
   \coordinate (P) at (35:3.2);
   \draw[thin, dashed] (A) -- (P);
   \draw[thin, dashed] (A) -- (B);
-  \draw[myarrow] (A) -- (35:1.3) node[above left] {$\mbfv_A$};
-  \draw[myarrow] (B) -- (3.7,0) node[above] {$\mbfv_B$};
+  \draw[myarrow] (A) -- (35:1.3);
+  \node[above left=0pt] at ($(35:1.3)!1.4mm!(A)$) {$\mbfv_A$};
+  \draw[myarrow] (B) -- (3.7,0);
+  \node[above=1pt] at ($(3.7,0)!1.4mm!(B)$) {$\mbfv_B$};
   \pic[draw, thin, pic text={$\alpha$}, angle radius=7mm, angle eccentricity=1.4] {angle = B--A--P};
   \draw[thin] (A) -- (0,-0.75);
   \draw[thin] (B) -- (5,-0.75);
