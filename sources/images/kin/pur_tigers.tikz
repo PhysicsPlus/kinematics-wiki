@@ -15,5 +15,5 @@
   \node[below left] at (A) {$A$};
   \node[below right] at (B) {$B$};
   \node[above right] at (C) {$C$};
-  \path (0,-1.03);
+  \path (0,-0.755);
 \end{tikzpicture}

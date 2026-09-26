@@ -2,20 +2,20 @@
 \begin{tikzpicture}[scale=1.4, baseline=0pt]
   \coordinate (S) at (0,0);
   \coordinate (N) at (2.6,0);
-  \coordinate (B) at (-0.8,2.2);
+  \coordinate (B) at (-0.8,2.8);
   \begin{scope}
     \clip (-1.2,-0.135) rectangle (3.3,0);
     \foreach \x in {-1.2,-1.04,...,3.595} \draw[thin] (\x,0) -- ++(-0.135,-0.135);
   \end{scope}
   \draw[standart] (-1.2,0) -- (3.3,0);
-  \draw[thin, dashed] plot[domain=0:2.2, samples=40, smooth, variable=\y] ({-0.8*(\y/2.2)^4}, \y);
+  \draw[thin, dashed] plot[domain=0:2.8, samples=40, smooth, variable=\y] ({-0.8*(\y/2.8)^4}, \y);
   \draw[thin] (N) -- (B);
   \pic[draw, thin, pic text={$\alpha$}, angle radius=5mm, angle eccentricity=1.5] {angle = B--N--S};
-  \draw[myarrow] (2.9,2.3) -- (1.8,2.3) node[midway, above] {\small ветер};
-  \draw[thin] (S) -- (0,-0.85);
-  \draw[thin] (N) -- (2.6,-0.85);
+  \draw[myarrow] (2.9,2.9) -- (1.8,2.9) node[midway, above] {\small ветер};
+  \draw[thin] (S) -- (0,-0.62);
+  \draw[thin] (N) -- (2.6,-0.62);
   \draw[{Stealth[inset=0pt, length=8pt, angle'=30]}-{Stealth[inset=0pt, length=8pt, angle'=30]}, line width=0.75pt]
-    (0,-0.7) -- node[above] {$L$} (2.6,-0.7);
+    (0,-0.52) -- node[above] {$L$} (2.6,-0.52);
   \draw[fill=white] (B) circle (0.1);
   \node[point] at (S) {};
   \node[point] at (N) {};
