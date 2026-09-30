@@ -1,0 +1,54 @@
+% Два корабля с равными скоростями (L = 2). Слева -- лабораторная система: цель A идёт
+% вверх от берега, преследователь B описывает кривую погони; тонкие отрезки соединяют
+% одновременные положения. Справа -- система цели: начало в A, ось x вдоль скорости A
+% (вверх), ось y вдоль берега; оси не вращаются. Траектория B -- парабола r - x = L.
+\begin{tikzpicture}[scale=1.0]
+  % ---- а) лабораторная система
+  \begin{scope}
+  \begin{scope}
+    \clip (-0.5,-0.17) rectangle (2.6,0);
+    \foreach \x in {-0.5,-0.29,...,2.98} \draw[thin] (\x,0) -- ++(-0.17,-0.17);
+  \end{scope}
+    \draw[standart] (-0.5,0) -- (2.6,0);
+    \draw[thin] (0,0) -- (0,4.4);
+    \draw[myarrow] (0,3.7) -- (0,4.4);
+    \node[right=1pt] at ($(0,4.4)!1.4mm!(0,3.7)$) {$\mbfv$};
+    \draw[thick] plot[smooth] coordinates {(2.000,0.000) (1.751,0.016) (1.506,0.067) (1.272,0.155) (1.055,0.278) (0.861,0.435) (0.693,0.620) (0.552,0.826) (0.436,1.047) (0.342,1.279) (0.268,1.518) (0.210,1.761) (0.164,2.007) (0.128,2.254) (0.099,2.502) (0.077,2.751) (0.060,3.001) (0.047,3.251) (0.037,3.500) (0.029,3.750) (0.022,4.000) (0.017,4.250) (0.013,4.500) (0.010,4.750) (0.008,5.000) (0.006,5.250)};
+    \foreach \p/\q in {{(1.055,0.278)}/{(0,1)}, {(0.268,1.518)}/{(0,2.5)}} {
+      \draw[thin, dashed] \p -- \q;
+      \node[point] at \p {};
+      \node[point] at \q {};
+    }
+    \node[point] at (0,0) {};
+    \node[point] at (2,0) {};
+    \node[above left] at (0,0) {$A$};
+    \node[above right] at (2,0) {$B$};
+    \node at (1.1,-0.7) {а)};
+  \end{scope}
+  % ---- б) система цели
+  \begin{scope}[xshift=7.0cm, yshift=2.6cm]
+    \def\L{2}
+    \draw[myarrow] (-3.2,0) -- (3.1,0) node[below] {$y$};
+    \draw[myarrow] (0,-2.5) -- (0,1.6) node[left] {$x$};
+    \draw[thin, dashed] (-3.2,-2) -- (3.1,-2) node[above left] {$x = -L$};
+    \draw[thin, dashed] plot[domain=-2.2:2.75, samples=60, smooth, variable=\y] (\y, {(\y*\y-\L*\L)/(2*\L)});
+    \draw[thick] plot[domain=0:2, samples=40, smooth, variable=\y] (\y, {(\y*\y-\L*\L)/(2*\L)});
+    \coordinate (P) at (1.2,-0.64);
+    \draw[thin] (0,0) -- node[below left=-1pt] {$r$} (P);
+    \draw[thin] (P) -- (1.2,-2);
+    \draw[thin] (1.06,-2) -- (1.06,-1.86) -- (1.2,-1.86);
+    \draw[thin] (-0.25,0) -- (-2.7,0);
+    \draw[thin] (-0.25,-1) -- (-2.7,-1);
+    \draw[{Stealth[inset=0pt, length=6pt, angle'=30]}-{Stealth[inset=0pt, length=6pt, angle'=30]}, line width=0.6pt]
+      (-2.55,0) -- node[left] {$\frac{L}{2}$} (-2.55,-1);
+    \node[point] at (0,0) {};
+    \node[point] at (2,0) {};
+    \node[point] at (0,-1) {};
+    \node[point] at (P) {};
+    \node[above left] at (0,0) {$A$};
+    \node[below right] at (2,0) {$B_0$};
+    \node[below right] at (0,-1) {$V$};
+    \node[right, yshift=-2.5pt] at (P) {$B$};
+    \node at (0.1,-3.2) {б)};
+  \end{scope}
+\end{tikzpicture}

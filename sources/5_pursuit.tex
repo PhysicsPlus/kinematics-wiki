@@ -1,0 +1,33 @@
+\documentclass[11pt, luatex, twoside]{book}
+\usepackage{chap}
+
+
+
+% =====================================================================
+% БИБЛИОГРАФИЯ (biblatex + biber, стиль ГОСТ)
+% =====================================================================
+\usepackage{csquotes}% нужно для работы biblatex
+\usepackage[%
+backend=biber,         % движок обработки библиографии
+bibencoding=utf8,      % кодировка bib-файла
+sorting=none,          % порядок: по порядку цитирования (не по алфавиту)
+citestyle=gost-numeric,
+bibstyle=gost-numeric, % стиль по ГОСТ
+clearlang=true,        % не выводить поле language, если совпадает с~языком документа
+]{biblatex}
+\addbibresource{lit.bib}               % файл с~библиографической базой
+\setlength{\biblabelsep}{4pt}          % отступ от номера в~списке литературы
+\AtBeginBibliography{\small}           % уменьшенный шрифт для списка литературы
+
+\begin{document}
+
+% ---------------------------------------------------------------------
+% ОСНОВНОЙ ТЕКСТ
+% ---------------------------------------------------------------------
+\mainmatter
+
+\chapter{Основы кинематики}
+% § 5 «Задачи преследования»
+\subfile{chapters/05_pursuit}
+
+\end{document}

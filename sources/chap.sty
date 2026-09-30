@@ -201,8 +201,9 @@
 
 \RequirePackage{caption}
 \captionsetup{
-  font={small, it},
-  labelfont={small, it}
+  font=small,
+  labelfont=small,
+  labelsep=period
 }
 % -----------------------------------------------------------------------
 % 12. СРЕДЫ — tcolorbox с вертикальной линией слева
@@ -236,7 +237,7 @@
     envstyle,
     borderline west={1.5pt}{0pt}{indigo},
     before skip=0.5\baselineskip,
-    after skip=0.3\baselineskip,
+    after skip=0.6\baselineskip,
   ]%
   {\scshape Определение \thedefcounter.}\ \normalfont\ignorespaces
 }{%
@@ -277,10 +278,15 @@
 % -----------------------------------------------------------------------
 % 13. ОТСТУПЫ ВОКРУГ ФОРМУЛ
 % -----------------------------------------------------------------------
-\setlength{\abovedisplayskip}{0.5\baselineskip}
-\setlength{\belowdisplayskip}{0.5\baselineskip}
-\setlength{\abovedisplayshortskip}{0.2\baselineskip}
-\setlength{\belowdisplayshortskip}{0.4\baselineskip}
+% Резиновые отступы от 0,5 до 0,7 строки. Класс переустанавливает эти длины
+% в \normalsize, поэтому они дописываются в конец \normalsize.
+\newcommand*{\PP@displayskips}{%
+  \setlength{\abovedisplayskip}{0.6\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}%
+  \setlength{\belowdisplayskip}{0.6\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}%
+  \setlength{\abovedisplayshortskip}{0.2\baselineskip}%
+  \setlength{\belowdisplayshortskip}{0.6\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}}
+\expandafter\g@addto@macro\csname normalsize \endcsname{\PP@displayskips}
+\PP@displayskips
 
 % -----------------------------------------------------------------------
 % 14. ВСПОМОГАТЕЛЬНЫЕ ПАКЕТЫ И КОМАНДЫ
@@ -327,6 +333,7 @@
 \clubpenalty=10000
 \widowpenalty=10000
 \displaywidowpenalty=10000
+\brokenpenalty=10000 % без переноса слова на границе страниц
 
 % -----------------------------------------------------------------------
 % 18. МАТЕМАТИЧЕСКИЕ ОБОЗНАЧЕНИЯ
@@ -339,5 +346,109 @@
 % Координаты вектора столбцом
 \newcommand{\colvec}[3]{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
 \newcommand{\colvecii}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+
+% -----------------------------------------------------------------------
+% 19. TikZ / PGFPlots — стили рисунков (общие с задачником Physics-Problems)
+% Источник: sty/tikz-preamble.sty и sty/physprobs.sty задачника. Назначение —
+% чтобы рисунки лекций были оформлены один в один с задачником.
+% -----------------------------------------------------------------------
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta, angles, quotes, calc, positioning, backgrounds}
+
+\tikzset{
+  thin/.style     = {line width=0.5pt},
+  standart/.style = {line width=0.75pt},
+  thick/.style    = {line width=1pt},
+  heavy/.style    = {line width=1.4pt},
+}
+
+\tikzset{
+  % Стрелка-вектор: Stealth, 0.75 pt (скорости, силы, оси-стрелки)
+  myarrow/.style = {
+    -{Stealth[inset=0pt, length=8pt, angle'=30]},
+    line width=0.75pt
+  },
+  % Точка-кружок: диаметр 1 мм, белая заливка, обводка 0.5 pt
+  point/.style = {
+    draw=black, fill=white, line width=0.5pt,
+    circle, minimum width=1mm, minimum height=1mm, inner sep=0pt
+  },
+  probpoint/.style = {
+    draw=black, fill=white, line width=0.5pt,
+    circle, minimum size=1mm, inner sep=0pt
+  },
+  every node/.style={font=\small}
+}
+
+\RequirePackage{pgfplots}
+\pgfplotsset{
+  compat=1.18,
+  % compact — оси-стрелки, без сетки (схемы, траектории, простые зависимости)
+  compact/.style={
+    width=0.95\linewidth, height=6cm,
+    axis lines=left,
+    axis line style={-{Latex}},
+    xlabel style={at={(axis description cs:1,0)}, anchor=north west,
+      xshift=3pt, inner sep=1pt},
+    ylabel style={at={(axis description cs:0,1)}, anchor=south east,
+      yshift=2pt, rotate=0, inner sep=1pt},
+    tick label style={font=\small}, label style={font=\small},
+    grid=none, enlargelimits=false, clip=false,
+  },
+  % olymp-grid — рамка с двухуровневой сеткой-миллиметровкой
+  olymp-grid/.style={
+    axis lines=box,
+    axis line style={standart, black},
+    grid=both,
+    major grid style={standart, black},
+    minor grid style={thin, gray},
+    tick style={draw=none},
+    xlabel style={at={(xticklabel* cs:1)}, anchor=north east,
+      xshift=3pt, yshift=-1pt, font=\small},
+    ylabel style={at={(yticklabel* cs:1)}, anchor=south east,
+      rotate=-90, yshift=-15pt, xshift=-1pt, font=\small},
+    enlargelimits=false, clip=false,
+  },
+  % arrowaxes — схематичные оси-стрелки через начало координат, метки вручную
+  arrowaxes/.style={
+    axis lines=middle,
+    axis line style={myarrow},
+    enlargelimits=false, clip=false, grid=none, scale only axis,
+    xtick=\empty, ytick=\empty,
+    tick label style={font=\small}, label style={font=\small},
+  },
+  compact
+}
+
+% \mmgrid — сетка-миллиметровка внутри axis (olymp-grid + grid=none), вызывать
+% ДО \addplot. \mmgrid[стиль мелк.][стиль осн.]{xmin}{xmax}{ymin}{ymax}{шаг м.}{шаг о.}
+\NewDocumentCommand{\mmgrid}{ O{thin,black!30} O{thin,black!80} m m m m m m }{%
+  \pgfmathtruncatemacro{\PP@gnx}{round((#4-#3)/#7)}%
+  \pgfmathtruncatemacro{\PP@gny}{round((#6-#5)/#7)}%
+  \pgfmathtruncatemacro{\PP@gNx}{round((#4-#3)/#8)}%
+  \pgfmathtruncatemacro{\PP@gNy}{round((#6-#5)/#8)}%
+  \foreach \PP@i in {0,...,\PP@gnx}{%
+    \pgfmathparse{#3+\PP@i*#7}\edef\PP@g{\pgfmathresult}%
+    \edef\PP@d{\noexpand\draw[#1] (axis cs:\PP@g,#5) -- (axis cs:\PP@g,#6);}\PP@d}%
+  \foreach \PP@i in {0,...,\PP@gny}{%
+    \pgfmathparse{#5+\PP@i*#7}\edef\PP@g{\pgfmathresult}%
+    \edef\PP@d{\noexpand\draw[#1] (axis cs:#3,\PP@g) -- (axis cs:#4,\PP@g);}\PP@d}%
+  \foreach \PP@i in {0,...,\PP@gNx}{%
+    \pgfmathparse{#3+\PP@i*#8}\edef\PP@g{\pgfmathresult}%
+    \edef\PP@d{\noexpand\draw[#2] (axis cs:\PP@g,#5) -- (axis cs:\PP@g,#6);}\PP@d}%
+  \foreach \PP@i in {0,...,\PP@gNy}{%
+    \pgfmathparse{#5+\PP@i*#8}\edef\PP@g{\pgfmathresult}%
+    \edef\PP@d{\noexpand\draw[#2] (axis cs:#3,\PP@g) -- (axis cs:#4,\PP@g);}\PP@d}%
+}
+
+% Папки с рисунками (пути относительно корня проекта)
+\graphicspath{{images/}{images/kin/}{images/1D/}}
+
+% Вставка векторного рисунка-сайдкара: \figtikz[pos]{путь.tikz}{подпись}{метка}
+\NewDocumentCommand{\figtikz}{ O{ht} m m m }{%
+  \begin{figure}[#1]\centering
+    \input{#2}%
+    \caption{#3}\label{#4}%
+  \end{figure}}
 
 \endinput

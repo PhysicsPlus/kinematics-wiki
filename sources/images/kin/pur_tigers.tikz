@@ -1,0 +1,25 @@
+% Три тигра в вершинах прямоугольного равнобедренного треугольника (Всеросс 2022)
+\begin{tikzpicture}[scale=1.15, baseline=0pt]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3,0);
+  \coordinate (C) at (3,3);
+  \draw[myarrow] (-0.3,0) -- (3.9,0) node[below] {$x$};
+  \draw[myarrow] (0,-0.3) -- (0,3.6) node[left] {$y$};
+  \draw[standart] (A) -- (B) -- (C) -- cycle;
+  \coordinate (V1) at ($(A)+(1.1,0)$);
+  \coordinate (V2) at ($(B)+(0,1.1)$);
+  \coordinate (V3) at ($(C)+(-0.9,-0.9)$);
+  \draw[myarrow] (A) -- (V1);
+  \node[below=1pt] at ($(V1)!1.4mm!(A)$) {$\mbfv_1$};
+  \draw[myarrow] (B) -- (V2);
+  \node[right=1pt] at ($(V2)!1.4mm!(B)$) {$\mbfv_2$};
+  \draw[myarrow] (C) -- (V3);
+  \node[above left=0pt] at ($(V3)!1.4mm!(C)$) {$\mbfv_3$};
+  \node[point] at (A) {};
+  \node[point] at (B) {};
+  \node[point] at (C) {};
+  \node[below left] at (A) {$A$};
+  \node[below right] at (B) {$B$};
+  \node[above right] at (C) {$C$};
+  \path (0,-0.755);
+\end{tikzpicture}
